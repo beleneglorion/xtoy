@@ -1,21 +1,21 @@
 <?php
 
 require '../../vendor/autoload.php';
-use XtoY\Reader\CSV_Reader;
+use XtoY\Reader\XLS_Reader;
 use XtoY\Writer\Xliff_Writer;
 use XtoY\Mapper\Mapper;
 use XtoY\XtoY;
-$x = 'input.csv';
+$x = 'input.xls';
 $y = 'output.xlf';
 
 @unlink($y);
-$csvConfig = array('delimiter'=>';','enclosure'=>'"','escape'=>'\\','length'=>null,'skip'=>1);
-$reader = new CSV_Reader($csvConfig);
+$readerConfig = array('skip'=>1);
+$reader = new XLS_Reader($readerConfig);
 $reader->setDSN($x);
 
 $xliffConfig = array(
     'source-language' =>'default',
-    'target-language' =>'en',
+    'target-language' =>'fr',
     'original' =>$x
 );
 
@@ -24,7 +24,7 @@ $writer->setDDN($y);
 
 $rules = array();
 $rules['source'] = array('src'=>0);
-$rules['target'] = array('src'=>3);
+$rules['target'] = array('src'=>2);
 $mapper = new Mapper();
 $mapper->setRules($rules);
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="default" target-language="en" original="input.csv" datatype="plaintext">
+  <file source-language="default" target-language="fr" original="input.xls" datatype="plaintext">
     <body>
       <trans-unit id="2a9e0c7baf1cb5b706656fcfcec240ed" resname="accueil">
         <source>accueil</source>
@@ -113,10 +113,6 @@
       <trans-unit id="a9bb7c67aea3a68f37aae31f61c1e0ed" resname="help-search">
         <source>help-search</source>
         <target>Tapez un mot-clef, une reference, pour une recherche simple, pour une recherche avancée séparez les références par un ;</target>
-      </trans-unit>
-      <trans-unit id="8ac3e849eb1b101b77e02b47ebab4c82" resname="Reference - name">
-        <source>Reference - name</source>
-        <target>Référence - nom</target>
       </trans-unit>
     </body>
   </file>
