@@ -1,0 +1,15 @@
+Les readers permettre de lire des données depuis une source
+
+  - lire un fichier csv
+  - lire un flux xml
+  - lire un flux rss
+  - lire un flux newsML
+  - lire un fichier xls
+  - lire autre
+
+ renvoie un tableau de tableau de donnée
+ ou permet de lire ligne par lire a voir...
+
+
+
+l'acces a la source se fait par un DSN ? 

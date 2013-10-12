@@ -1,0 +1,31 @@
+{
+    "name": "beleneglorion/xtoy",
+    "type": "library",
+    "description": "A simple mechanism to convert thing X to another thing Y  csv->xml rss->database",
+    "keywords": ["excel", "spreadsheet", "document", "xml", "csv", "tsv", "html", "json", "reader", "converter", "writer"],
+    "homepage": "http://beleneglorion.github.com/xtoy",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/beleneglorion/xtoy.git"
+        }
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sébastien Thibault",
+            "email": "contact@sebastien-thibault.com",
+            "homepage": "http://sebastien-thibault.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "faisalman/simple-excel-php": ">=v0.3.15"
+
+    },
+
+    "autoload": {
+        "psr-0": {"XtoY\\": "src/"}
+    }
+}

@@ -1,0 +1,8 @@
+le writer recupère un tableau de donnée en provenance du mapper
+et s'occupe d'enregister ceci dans un nouveau format ( la plus part du temps dans la base de donnée vu qu'on parle d'importeur )
+
+ -> si c'est un tableau et que ca va en base il me faut la connect a la base de donné, la table, les donnée
+   ->sinon j'instancie un objet avec les setter and getter qui vont bien et sauvegarge l'objet ?
+
+  -> si j'ai des entité style doctrine, ( symfony, flow3, ) juste sauvegarder l'objet
+  ->

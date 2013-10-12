@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="default" target-language="en" original="test.csv" datatype="plaintext">
+    <body>
+      <trans-unit id="2a9e0c7baf1cb5b706656fcfcec240ed" resname="accueil">
+        <source>accueil</source>
+        <target>Accueil</target>
+      </trans-unit>
+      <trans-unit id="f303897f8e6329a47083249467a532e7" resname="recherche">
+        <source>recherche</source>
+        <target>Recherche</target>
+      </trans-unit>
+      <trans-unit id="180ea33aa4f0618c9782bf6165b0204e" resname="par-mots-clefs">
+        <source>par-mots-clefs</source>
+        <target>par mots-clés / Références</target>
+      </trans-unit>
+      <trans-unit id="d922bac0b747c204ddd192dd3dc71c1e" resname="par-section">
+        <source>par-section</source>
+        <target>par section</target>
+      </trans-unit>
+      <trans-unit id="810e4e9b9cad26ad63114ce9c9ba3afa" resname="nos-produits">
+        <source>nos-produits</source>
+        <target>Nos produits</target>
+      </trans-unit>
+      <trans-unit id="19a51ec9ca14f0dcfcb3ef708610507e" resname="mentions-legales">
+        <source>mentions-legales</source>
+        <target>Mentions légales</target>
+      </trans-unit>
+      <trans-unit id="6ff28cbbc5428f405e160051c9bf7661" resname="beoin-aide">
+        <source>beoin-aide</source>
+        <target>Besoin d\'aide ?</target>
+      </trans-unit>
+      <trans-unit id="8d0b74e966f6f4b006a996a712f0ffcb" resname="Cliquez-ici">
+        <source>Cliquez-ici</source>
+        <target>Cliquez-ici</target>
+      </trans-unit>
+      <trans-unit id="67daf92c833c41c95db874e18fcb2786" resname="description">
+        <source>description</source>
+        <target>Description</target>
+      </trans-unit>
+      <trans-unit id="44a2dc91e1e21b653fd7ff6c63eca555" resname="references">
+        <source>references</source>
+        <target>Références</target>
+      </trans-unit>
+      <trans-unit id="912d6b186909d6d509e79e38815e2ccc" resname="fichiers-annexes">
+        <source>fichiers-annexes</source>
+        <target>Fichiers annexes</target>
+      </trans-unit>
+      <trans-unit id="ee3b677e324ad8f7202a588cffbbc286" resname="fiche-produit">
+        <source>fiche-produit</source>
+        <target>Fiche produit</target>
+      </trans-unit>
+      <trans-unit id="c2df9913a29bfc0b7a4a5104bc79dfce" resname="telecharger-fiche-produit">
+        <source>telecharger-fiche-produit</source>
+        <target>Télécharger la fiche produit</target>
+      </trans-unit>
+      <trans-unit id="724bcced370407d9c734a1e546de0aa2" resname="notice-utilisation">
+        <source>notice-utilisation</source>
+        <target>Notice d'utilisation</target>
+      </trans-unit>
+      <trans-unit id="4e7230952087ffded4865076280ab58c" resname="telecharger-notice-utilisation">
+        <source>telecharger-notice-utilisation</source>
+        <target>Télécharger la notice d'utilisation</target>
+      </trans-unit>
+      <trans-unit id="421b47ffd946ca083b65cd668c6b17e6" resname="video">
+        <source>video</source>
+        <target>Vidéo</target>
+      </trans-unit>
+      <trans-unit id="1deab64f9fcec1370f31b07bd9bb9384" resname="regarder-video">
+        <source>regarder-video</source>
+        <target>Regarder la vidéo</target>
+      </trans-unit>
+      <trans-unit id="56bfa8b613d8195bc5017033018b6753" resname="autre-references">
+        <source>autre-references</source>
+        <target>Autre références</target>
+      </trans-unit>
+      <trans-unit id="3906601957be23743a7ea7a32040f388" resname="normes">
+        <source>normes</source>
+        <target>Normes</target>
+      </trans-unit>
+      <trans-unit id="16f0ada2144eaa0b96478073d5e3d78b" resname="informations">
+        <source>informations</source>
+        <target>Informations</target>
+      </trans-unit>
+      <trans-unit id="8b6c05dc5e5c232fe9ceb6eb6fb2bd62" resname="telecharger-fiche-reference">
+        <source>telecharger-fiche-reference</source>
+        <target>Télécharger la fiche reference</target>
+      </trans-unit>
+      <trans-unit id="bdddd95e185e39037e3ab2c6c477701a" resname="reference-commencant-par">
+        <source>reference-commencant-par</source>
+        <target>Les références commençant par</target>
+      </trans-unit>
+      <trans-unit id="4bb4324954e4702f87e79092f25a1528" resname="resultat-recherche-pour">
+        <source>resultat-recherche-pour</source>
+        <target>Résultat de recherche pour</target>
+      </trans-unit>
+      <trans-unit id="63560bbd6d9235a38297c8b6eea0c53f" resname="tout-selectionner">
+        <source>tout-selectionner</source>
+        <target>Tout sélectionner</target>
+      </trans-unit>
+      <trans-unit id="c2679cca3eb0c77ee3dcd4ad3834c925" resname="voir">
+        <source>voir</source>
+        <target>Voir</target>
+      </trans-unit>
+      <trans-unit id="72dea7f477ad3681a37901b64101fb64" resname="telecharger-selection">
+        <source>telecharger-selection</source>
+        <target>Télécharger la selection (PDF)</target>
+      </trans-unit>
+      <trans-unit id="3ddef2469a35786addd64f72e0381b72" resname="recherche-incorrecte">
+        <source>recherche-incorrecte</source>
+        <target>Cette chaine est trop courte. Elle doit avoir au minimum 3 caractères. </target>
+      </trans-unit>
+      <trans-unit id="a9bb7c67aea3a68f37aae31f61c1e0ed" resname="help-search">
+        <source>help-search</source>
+        <target>Tapez un mot-clef, une reference, pour une recherche simple, pour une recherche avancée séparez les références par un ;</target>
+      </trans-unit>
+      <trans-unit id="8ac3e849eb1b101b77e02b47ebab4c82" resname="Reference - name">
+        <source>Reference - name</source>
+        <target>Référence - nom</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
