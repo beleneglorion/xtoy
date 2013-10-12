@@ -21,7 +21,7 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "faisalman/simple-excel-php": ">=v0.3.15"
+        "php-excel-reader/spreadsheet-reader": "dev-master"
 
     },
 
