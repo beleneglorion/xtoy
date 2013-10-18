@@ -38,6 +38,19 @@ class XtoY {
 
         $this->mode = $mode;
     }
+    
+    public function getReader()
+    {
+        return $this->reader;
+    }
+     public function getWriter()
+    {
+        return $this->writer;
+    }
+     public function getMapper()
+    {
+        return $this->mapper;
+    }
 
     public function getMode() {
 
