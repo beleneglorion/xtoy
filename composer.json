@@ -21,7 +21,9 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "php-excel-reader/spreadsheet-reader": "dev-master"
+        "php-excel-reader/spreadsheet-reader": "dev-master",
+        "symfony/config": ">=2.2",
+        "symfony/yaml": ">=2.2"
 
     },
 
