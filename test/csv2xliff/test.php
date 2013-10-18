@@ -1,6 +1,6 @@
 <?php
 
-require '../../vendor/autoload.php';
+require __DIR__.'/../../vendor/autoload.php';
 use XtoY\Reader\CSV_Reader;
 use XtoY\Writer\Xliff_Writer;
 use XtoY\Mapper\Mapper;
