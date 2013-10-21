@@ -1,0 +1,25 @@
+Reader:
+  class : XtoY\Reader\CSV_Reader
+  options : 
+      delimiter: ";"
+      enclosure: '"'
+      escape: '\'
+      length: null
+      skip: 1
+  dsn : input.csv
+  
+Writer:
+   class : XtoY\Writer\Xliff_Writer
+   options :
+     source-language : 'default'
+     target-language : 'en'
+     original : input.csv
+   ddn: output.xlf  
+   
+Mapper:
+  class : XtoY\Mapper\Mapper
+  rules :
+    source : 
+      src : 0
+    target:
+     src : 3
