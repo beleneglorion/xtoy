@@ -3,7 +3,7 @@
 require __DIR__.'/../../vendor/autoload.php';
 use XtoY\Builder\YamlBuilder;
 chdir(__DIR__);
-$uc = YamlBuilder::getConverter('csv2xliff.yml');
+$uc = YamlBuilder::getConverter('xls2xliff.yml');
 $ddn = $uc->getWriter()->getDDN();
 if(file_exists($ddn)) {
  unlink($ddn);   
