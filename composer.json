@@ -8,6 +8,18 @@
         {
             "type": "vcs",
             "url": "https://github.com/beleneglorion/xtoy.git"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "nuovo/spreadsheet-reader",
+                "version": "master",
+                "source": {
+                    "url": "https://github.com/nuovo/spreadsheet-reader.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
         }
     ],
     "license": "MIT",
@@ -23,11 +35,13 @@
         "php": ">=5.3.0",
         "php-excel-reader/spreadsheet-reader": "dev-master",
         "symfony/config": ">=2.2",
-        "symfony/yaml": ">=2.2"
+        "symfony/yaml": ">=2.2",
+        "nuovo/spreadsheet-reader" : "dev-master"
 
     },
 
     "autoload": {
-        "psr-0": {"XtoY\\": "src/"}
+        "psr-0": {"XtoY\\": "src/"},
+        "classmap": ["vendor/nuovo/"]
     }
 }
