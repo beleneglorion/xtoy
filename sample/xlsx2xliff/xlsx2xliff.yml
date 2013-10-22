@@ -1,0 +1,21 @@
+Reader:
+  class : XtoY\Reader\XLSX_Reader
+  options : 
+      skip: 1
+  dsn : input.xlsx
+  
+Writer:
+   class : XtoY\Writer\Xliff_Writer
+   options :
+     source-language : 'default'
+     target-language : 'fr'
+     original : input.csv
+   ddn: output.xlf  
+   
+Mapper:
+  class : XtoY\Mapper\Mapper
+  rules :
+    source : 
+      src : 0
+    target:
+     src : 3

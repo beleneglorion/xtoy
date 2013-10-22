@@ -1,0 +1,931 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="default" target-language="fr" original="input.csv" datatype="plaintext">
+    <body>
+      <trans-unit id="1be6f9eb563f3bf85c78b4219bf09de9" resname="Brand">
+        <source>Brand</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="9c9949687610324de2d4da2f9b4247c6" resname="SkuId">
+        <source>SkuId</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="ac70412e939d72a9234cdebb1af5867b" resname="Path">
+        <source>Path</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="b913ce59961db5b1e6c2674fb877700f" resname="Size A [in]">
+        <source>Size A [in]</source>
+        <target>A ["]</target>
+      </trans-unit>
+      <trans-unit id="94a2be5c0e76fbbdaa09dc6242888673" resname="Size A [mm]">
+        <source>Size A [mm]</source>
+        <target>A [mm]</target>
+      </trans-unit>
+      <trans-unit id="674714f7ef23f3e228f49dbbfe50c1e8" resname="Pattern_Screwdriver A fente [No]">
+        <source>Pattern_Screwdriver A fente [No]</source>
+        <target>A fente [No]</target>
+      </trans-unit>
+      <trans-unit id="e8269ff0421ae5ea0e986d911bcc350b" resname="Size A maxi [in]">
+        <source>Size A maxi [in]</source>
+        <target>A maxi ["]</target>
+      </trans-unit>
+      <trans-unit id="73a828b68da98be484d9ea651bc6e97e" resname="Size A maxi [mm]">
+        <source>Size A maxi [mm]</source>
+        <target>A maxi [mm]</target>
+      </trans-unit>
+      <trans-unit id="239b098c5ce5167437f943fee28b2675" resname="Size A mini - maxi [mm]">
+        <source>Size A mini - maxi [mm]</source>
+        <target>A mini - maxi [mm]</target>
+      </trans-unit>
+      <trans-unit id="d4ccc27be4fd60af68fbcf33e6982ade" resname="Head Width B [mm]">
+        <source>Head Width B [mm]</source>
+        <target>B [mm]</target>
+      </trans-unit>
+      <trans-unit id="f9fd31eaf027528591e70350c4d8500b" resname="Size B mini - maxi [mm]">
+        <source>Size B mini - maxi [mm]</source>
+        <target>B mini - maxi [mm]</target>
+      </trans-unit>
+      <trans-unit id="df0bca8352fcaeefe589537d2ac20342" resname="Size B mini [mm]">
+        <source>Size B mini [mm]</source>
+        <target>B mini [mm]</target>
+      </trans-unit>
+      <trans-unit id="e0e46f3fdcbd59071a64393a9ab9d037" resname="Head Width B x B1 [mm]">
+        <source>Head Width B x B1 [mm]</source>
+        <target>B x B1 [mm]</target>
+      </trans-unit>
+      <trans-unit id="7c62cf158dc69e6b95bd87558b18cc4b" resname="Head Width B1 [mm]">
+        <source>Head Width B1 [mm]</source>
+        <target>B1 [mm]</target>
+      </trans-unit>
+      <trans-unit id="3e6ce9399e2b682a58930efbb538ff8f" resname="Head Height C [mm]">
+        <source>Head Height C [mm]</source>
+        <target>C [mm]</target>
+      </trans-unit>
+      <trans-unit id="ecbd443cf8700abca400bdcc9dc56525" resname="Open Position C mini - maxi [mm]">
+        <source>Open Position C mini - maxi [mm]</source>
+        <target>C mini - maxi [mm]</target>
+      </trans-unit>
+      <trans-unit id="b48593b5ce4a7001002d0523f64a9969" resname="Head Height C x C1 [mm]">
+        <source>Head Height C x C1 [mm]</source>
+        <target>C x C1 [mm]</target>
+      </trans-unit>
+      <trans-unit id="2807f51af963a3d6228c254812acd905" resname="Head Height C1 [mm]">
+        <source>Head Height C1 [mm]</source>
+        <target>C1 [mm]</target>
+      </trans-unit>
+      <trans-unit id="30cec5c62275642fc93f7cb022e2ea66" resname="Drawing Diameter d [in]">
+        <source>Drawing Diameter d [in]</source>
+        <target>d ["]</target>
+      </trans-unit>
+      <trans-unit id="099199f4d88f03b6c2b14cb04da65654" resname="Drawing Diameter d [mm]">
+        <source>Drawing Diameter d [mm]</source>
+        <target>d [mm]</target>
+      </trans-unit>
+      <trans-unit id="6998e217c7f3d2320e146227c85801eb" resname="Drawing Width D [mm]">
+        <source>Drawing Width D [mm]</source>
+        <target>D [mm]</target>
+      </trans-unit>
+      <trans-unit id="93412a36b6d0261c959200f2432d9a59" resname="Drawing Diameter d maxi [mm]">
+        <source>Drawing Diameter d maxi [mm]</source>
+        <target>d maxi [mm]</target>
+      </trans-unit>
+      <trans-unit id="314161ed50f0712bd64683594ebf1aba" resname="Drawing Diameter d mini - maxi [mm]">
+        <source>Drawing Diameter d mini - maxi [mm]</source>
+        <target>d mini - maxi [mm]</target>
+      </trans-unit>
+      <trans-unit id="74514c53ea9328995d9c7b4484735741" resname="Drawing Diameter d x L [mm]">
+        <source>Drawing Diameter d x L [mm]</source>
+        <target>d x L [mm]</target>
+      </trans-unit>
+      <trans-unit id="2b8b231dbd229978ff34e28daf8dce12" resname="Drawing Diameter d1 [mm]">
+        <source>Drawing Diameter d1 [mm]</source>
+        <target>d1 [mm]</target>
+      </trans-unit>
+      <trans-unit id="aaa39f6d8ef557d3a2c17955280e5f67" resname="Drawing Diameter d1 x L1 [mm]">
+        <source>Drawing Diameter d1 x L1 [mm]</source>
+        <target>d1 x L1 [mm]</target>
+      </trans-unit>
+      <trans-unit id="a7092a2fe06be5dc654e13d8b1f1e310" resname="Drawing Diameter d2 [mm]">
+        <source>Drawing Diameter d2 [mm]</source>
+        <target>d2 [mm]</target>
+      </trans-unit>
+      <trans-unit id="855a8abb7f2363f8c3dd300a9c2f8fc6" resname="Drawing Diameter d2 x L2 [mm]">
+        <source>Drawing Diameter d2 x L2 [mm]</source>
+        <target>d2 x L2 [mm]</target>
+      </trans-unit>
+      <trans-unit id="088d0c06f9c2f28e64bc3c9212e6a80c" resname="Drawing Diameter d3 [mm]">
+        <source>Drawing Diameter d3 [mm]</source>
+        <target>d3 [mm]</target>
+      </trans-unit>
+      <trans-unit id="d2870c0a1d83e44f550b5e6e420715de" resname="Drawing Diameter d4 [mm]">
+        <source>Drawing Diameter d4 [mm]</source>
+        <target>d4 [mm]</target>
+      </trans-unit>
+      <trans-unit id="b7f1efc49f2c6ec8cd810cc60cce9bda" resname="Drawing Diameter d5 [mm]">
+        <source>Drawing Diameter d5 [mm]</source>
+        <target>d5 [mm]</target>
+      </trans-unit>
+      <trans-unit id="c224ab79b2ca8147580b8ea6f3a47922" resname="Drawing Thickness E [mm]">
+        <source>Drawing Thickness E [mm]</source>
+        <target>E [mm]</target>
+      </trans-unit>
+      <trans-unit id="6c5011a8edb523e0b4009668782b87f7" resname="Drawing Thickness E maxi [mm]">
+        <source>Drawing Thickness E maxi [mm]</source>
+        <target>E maxi [mm]</target>
+      </trans-unit>
+      <trans-unit id="e99389665ff6d3a797b3f6c51a3c6d87" resname="Drawing Thickness E x E1 [mm]">
+        <source>Drawing Thickness E x E1 [mm]</source>
+        <target>E x E1 [mm]</target>
+      </trans-unit>
+      <trans-unit id="c3a5ce0a0b8021df2d71d4bb49257bb6" resname="Drawing Thickness x width E x l [mm]">
+        <source>Drawing Thickness x width E x l [mm]</source>
+        <target>E x l [mm]</target>
+      </trans-unit>
+      <trans-unit id="aae7275cac0ef934d14cc4fff1fdcff8" resname="Drawing Thickness E1 [mm]">
+        <source>Drawing Thickness E1 [mm]</source>
+        <target>E1 [mm]</target>
+      </trans-unit>
+      <trans-unit id="bb3306273c319d96301338bff0efc860" resname="Drawing Thickness E2 [mm]">
+        <source>Drawing Thickness E2 [mm]</source>
+        <target>E2 [mm]</target>
+      </trans-unit>
+      <trans-unit id="0a16f9d113dd0790287b767bacf56440" resname="Drawing Thickness E3 [mm]">
+        <source>Drawing Thickness E3 [mm]</source>
+        <target>E3 [mm]</target>
+      </trans-unit>
+      <trans-unit id="4cf7625a9bdbccb9bdee9acadbc5d2e6" resname="Drawing Thickness E4 [mm]">
+        <source>Drawing Thickness E4 [mm]</source>
+        <target>E4 [mm]</target>
+      </trans-unit>
+      <trans-unit id="b27ad429c92a8d2ad54db31a5adcc905" resname="Height H [mm]">
+        <source>Height H [mm]</source>
+        <target>H [mm]</target>
+      </trans-unit>
+      <trans-unit id="20c5ba9aad0dda12522cb4f59c7a3806" resname="Height H maxi [mm]">
+        <source>Height H maxi [mm]</source>
+        <target>H maxi [mm]</target>
+      </trans-unit>
+      <trans-unit id="1e6c58116708fd02b9f8b1be12a372dc" resname="Height H mini - maxi [mm]">
+        <source>Height H mini - maxi [mm]</source>
+        <target>H mini - maxi [mm]</target>
+      </trans-unit>
+      <trans-unit id="5c5e68e4d2590d7a9a1dd35d04ca5693" resname="Height H mini [mm]">
+        <source>Height H mini [mm]</source>
+        <target>H mini [mm]</target>
+      </trans-unit>
+      <trans-unit id="9dc89e946eec4f7e5764ea67d243bf9f" resname="Height H x H1 [mm]">
+        <source>Height H x H1 [mm]</source>
+        <target>H x H1 [mm]</target>
+      </trans-unit>
+      <trans-unit id="ddbd9294ab4faad678e5ac259cd5a801" resname="Height H1 [mm]">
+        <source>Height H1 [mm]</source>
+        <target>H1 [mm]</target>
+      </trans-unit>
+      <trans-unit id="9cdf10ff886bfbcbc893b47f4aa75666" resname="Height H2 [mm]">
+        <source>Height H2 [mm]</source>
+        <target>H2 [mm]</target>
+      </trans-unit>
+      <trans-unit id="91bef24c0354a240d2f7e0539043e0f4" resname="Drawing Length [in]">
+        <source>Drawing Length [in]</source>
+        <target>L ["]</target>
+      </trans-unit>
+      <trans-unit id="9b8d78affabcf7780f616d0f102c5617" resname="Drawing Length L [m]">
+        <source>Drawing Length L [m]</source>
+        <target>L [m]</target>
+      </trans-unit>
+      <trans-unit id="8c0e83dc0dc6eb3a7b3bb4f2bcef2b30" resname="Drawing Length L [mm]">
+        <source>Drawing Length L [mm]</source>
+        <target>L [mm]</target>
+      </trans-unit>
+      <trans-unit id="815829c76d37b024db0c1c5324e28b47" resname="Width l [mm]">
+        <source>Width l [mm]</source>
+        <target>l [mm]</target>
+      </trans-unit>
+      <trans-unit id="5f43496d0acd7ee24a534e10d1c66953" resname="Length L maxi [mm]">
+        <source>Length L maxi [mm]</source>
+        <target>L maxi [mm]</target>
+      </trans-unit>
+      <trans-unit id="a996ad007f3e268c531e5748ee71cdf6" resname="Drawing Length x Height L x H [mm]">
+        <source>Drawing Length x Height L x H [mm]</source>
+        <target>L x H [mm]</target>
+      </trans-unit>
+      <trans-unit id="5012573f10d3075f4750805ac582b9d4" resname="Width x Height l x H [mm]">
+        <source>Width x Height l x H [mm]</source>
+        <target>l x H [mm]</target>
+      </trans-unit>
+      <trans-unit id="4e1998f115e283d88a1aa70e2ef97bb7" resname="Drawing Length x Width x Height L x l x H [mm]">
+        <source>Drawing Length x Width x Height L x l x H [mm]</source>
+        <target>L x l x H [mm]</target>
+      </trans-unit>
+      <trans-unit id="eb8a7c4d79c833c7170a87835f1ac64d" resname="Drawing Length L1 [mm]">
+        <source>Drawing Length L1 [mm]</source>
+        <target>L1 [mm]</target>
+      </trans-unit>
+      <trans-unit id="f192af25b9669ea6cb416f8302675568" resname="Drawing Length L1 x L2 [mm]">
+        <source>Drawing Length L1 x L2 [mm]</source>
+        <target>L1 x L2 [mm]</target>
+      </trans-unit>
+      <trans-unit id="c49016c09274e2541ca41feccbeb3f08" resname="Drawing Length L2 [inch]">
+        <source>Drawing Length L2 [inch]</source>
+        <target>L2 ["]</target>
+      </trans-unit>
+      <trans-unit id="f84b6c8f77a5e2ff6476196d976db1d3" resname="Drawing Length L2 [m]">
+        <source>Drawing Length L2 [m]</source>
+        <target>L2 [m]</target>
+      </trans-unit>
+      <trans-unit id="84ccf4de35f693f2fddf894cf80ee250" resname="Drawing Length L2 [mm]">
+        <source>Drawing Length L2 [mm]</source>
+        <target>L2 [mm]</target>
+      </trans-unit>
+      <trans-unit id="aa0e162713ad8363bca5d6510d05c90a" resname="Width l2 [mm]">
+        <source>Width l2 [mm]</source>
+        <target>l2 [mm]</target>
+      </trans-unit>
+      <trans-unit id="c06e7546eabd09e2ba149c9676b8d2fa" resname="Drawing Length L3 [mm]">
+        <source>Drawing Length L3 [mm]</source>
+        <target>L3 [mm]</target>
+      </trans-unit>
+      <trans-unit id="a83c780683eb2894eb3fae771d6e7934" resname="Ton T [kN]">
+        <source>Ton T [kN]</source>
+        <target>T [kN]</target>
+      </trans-unit>
+      <trans-unit id="307b5947b5ae56be4ff1b3ab6d0ba891" resname="140 kg/mm2 [D mm]">
+        <source>140 kg/mm2 [D mm]</source>
+        <target>140 kg/mm² [Ø mm]</target>
+      </trans-unit>
+      <trans-unit id="840cede0607bebfc5f3b1c2af61af41b" resname="160 kg/mm2 [D mm]">
+        <source>160 kg/mm2 [D mm]</source>
+        <target>160 kg/mm² [Ø mm]</target>
+      </trans-unit>
+      <trans-unit id="409c8b429ca247df579e5dbc43ebd742" resname="200 kg/mm2 [D mm]">
+        <source>200 kg/mm2 [D mm]</source>
+        <target>200 kg/mm² [Ø mm]</target>
+      </trans-unit>
+      <trans-unit id="8628c5defbd24b814c2270681c8a6d59" resname="Hex Size [in]">
+        <source>Hex Size [in]</source>
+        <target>6 pans ["]</target>
+      </trans-unit>
+      <trans-unit id="d6facaae8f9e38c8601885b15b39497e" resname="Hex Size [mm]">
+        <source>Hex Size [mm]</source>
+        <target>6 pans [mm]</target>
+      </trans-unit>
+      <trans-unit id="548602247648c31d9f928189e70b0ad0" resname="12-Point [mm]">
+        <source>12-Point [mm]</source>
+        <target>12 pans [mm]</target>
+      </trans-unit>
+      <trans-unit id="7bd0c2afebddd9c5ec566f9bb4c29125" resname="Hex Size - 12-point [mm]">
+        <source>Hex Size - 12-point [mm]</source>
+        <target>6 pans - 12 pans [mm]</target>
+      </trans-unit>
+      <trans-unit id="ba571b8d0e86d1f023cb85a0c509885b" resname="Alu D max [mm2]">
+        <source>Alu D max [mm2]</source>
+        <target>Alu Ø max [mm²]</target>
+      </trans-unit>
+      <trans-unit id="e9cb217697088a98b1937d111d936281" resname="Attachment">
+        <source>Attachment</source>
+        <target>Attachement</target>
+      </trans-unit>
+      <trans-unit id="a3332fa21dc4daeaed5d961a3927599f" resname="Actuating Pin">
+        <source>Actuating Pin</source>
+        <target>Axe de commande</target>
+      </trans-unit>
+      <trans-unit id="5fc810cf62601df84b7923b9964c53e6" resname="BA">
+        <source>BA</source>
+        <target>BA</target>
+      </trans-unit>
+      <trans-unit id="a0d4cc0f54602c3f247c72f15a7d2dbf" resname="Tips">
+        <source>Tips</source>
+        <target>Becs</target>
+      </trans-unit>
+      <trans-unit id="3e5217e841c6ec2bdf51fd9631aa4215" resname="Tips_multi">
+        <source>Tips_multi</source>
+        <target>Becs</target>
+      </trans-unit>
+      <trans-unit id="fad6a9a94a9dcb112efe71303ec7e9ac" resname="Spare Links">
+        <source>Spare Links</source>
+        <target>Bielle</target>
+      </trans-unit>
+      <trans-unit id="8d78fb33d3f5adb92baec4a2975e36cf" resname="Bit BNAE [No]">
+        <source>Bit BNAE [No]</source>
+        <target>BNAE [No.]</target>
+      </trans-unit>
+      <trans-unit id="3cfce651e667ab85486dd42a8185f98a" resname="Box">
+        <source>Box</source>
+        <target>Boîte</target>
+      </trans-unit>
+      <trans-unit id="399f64a312186080df1131f04aafaa31" resname="Offset Arm">
+        <source>Offset Arm</source>
+        <target>Bras coudé</target>
+      </trans-unit>
+      <trans-unit id="f180153b90bac2c2f58337e6900a6ab8" resname="Straight Arm">
+        <source>Straight Arm</source>
+        <target>Bras droit</target>
+      </trans-unit>
+      <trans-unit id="4821057b0ee5a6ba04e08e3b1fc936c6" resname="Gauge block">
+        <source>Gauge block</source>
+        <target>Cale étalon</target>
+      </trans-unit>
+      <trans-unit id="114c2bdf60d9e5495e21d77452ca45be" resname="Capacity [cN.m]">
+        <source>Capacity [cN.m]</source>
+        <target>Capacité [cN.m]</target>
+      </trans-unit>
+      <trans-unit id="9d799253edb3a25f878f2719f18d26e8" resname="Capacity [daN.m]">
+        <source>Capacity [daN.m]</source>
+        <target>Capacité [daN.m]</target>
+      </trans-unit>
+      <trans-unit id="62b705f49cfa04b889da4e30bc948e43" resname="Capacity [lbf.ft]">
+        <source>Capacity [lbf.ft]</source>
+        <target>Capacité [lbf.ft]</target>
+      </trans-unit>
+      <trans-unit id="6ad85775514fd87199ffe8b45042f24b" resname="Capacity [lbf.in]">
+        <source>Capacity [lbf.in]</source>
+        <target>Capacité [lbf.in]</target>
+      </trans-unit>
+      <trans-unit id="6e6339a99ff575a4e9f0eef1acccb62a" resname="Capacity Cubic [mm]">
+        <source>Capacity Cubic [mm]</source>
+        <target>Capacité [mm]</target>
+      </trans-unit>
+      <trans-unit id="20a134b5b3f9b0de12dcb910bf1435e1" resname="Capacity [N.m]">
+        <source>Capacity [N.m]</source>
+        <target>Capacité [N.m]</target>
+      </trans-unit>
+      <trans-unit id="b6bf6d764d1cb91a020f3638521a614c" resname="Capacity Semi-hard steel [mm]">
+        <source>Capacity Semi-hard steel [mm]</source>
+        <target>Capacité acier demi-dur [mm]</target>
+      </trans-unit>
+      <trans-unit id="65baf3f298f8c32f42c92341b2e2fc3d" resname="Oil Capacity [cm3]">
+        <source>Oil Capacity [cm3]</source>
+        <target>Capacité d'huile [cm³]</target>
+      </trans-unit>
+      <trans-unit id="241578359112953fac18162bebd55872" resname="Capacity Nuts [mm]">
+        <source>Capacity Nuts [mm]</source>
+        <target>Capacité écrous [mm]</target>
+      </trans-unit>
+      <trans-unit id="96adf666af9145ac139a5014124476fa" resname="Capacity Stainless [80 kg/mm2]">
+        <source>Capacity Stainless [80 kg/mm2]</source>
+        <target>Capacité Inox [80 kg/mm²]</target>
+      </trans-unit>
+      <trans-unit id="1f4a4a262ddd7901980af93012aa26cc" resname="Capacity Maxi [N.m]">
+        <source>Capacity Maxi [N.m]</source>
+        <target>Capacité Maxi [N.m]</target>
+      </trans-unit>
+      <trans-unit id="acb1b4690c415c56784eae3886742f4f" resname="Capacity Maxi Tube [mm]">
+        <source>Capacity Maxi Tube [mm]</source>
+        <target>Capacité maxi tube  [mm]</target>
+      </trans-unit>
+      <trans-unit id="9c037984a58df730043fc01071f61994" resname="Capacity Cubic D maxi [mm]">
+        <source>Capacity Cubic D maxi [mm]</source>
+        <target>Capacité Ø maxi [mm]</target>
+      </trans-unit>
+      <trans-unit id="ceb46ca115d05c51aa5a16a8867c3304" resname="Square">
+        <source>Square</source>
+        <target>Carré</target>
+      </trans-unit>
+      <trans-unit id="0add4a209a7dd2d6e3a760feedbc4dce" resname="Square [in]">
+        <source>Square [in]</source>
+        <target>Carré ["]</target>
+      </trans-unit>
+      <trans-unit id="b54faf3626710e9fc4f4a761fbde5d28" resname="Square Inches">
+        <source>Square Inches</source>
+        <target>Carré ["]</target>
+      </trans-unit>
+      <trans-unit id="d1d75000a11f746e3f71e81d8fe78877" resname="Female Square">
+        <source>Female Square</source>
+        <target>Carré F</target>
+      </trans-unit>
+      <trans-unit id="26d14a036d971177559b2e4db5604624" resname="Male Square">
+        <source>Male Square</source>
+        <target>Carré M</target>
+      </trans-unit>
+      <trans-unit id="9bd81329febf6efe22788e03ddeaf0af" resname="Class">
+        <source>Class</source>
+        <target>Classe</target>
+      </trans-unit>
+      <trans-unit id="d0e410ca11db8103b87c4f66e2659067" resname="Wrench">
+        <source>Wrench</source>
+        <target>Clé</target>
+      </trans-unit>
+      <trans-unit id="effe23f4e93d4b177831313cda81ecef" resname="Ratchet">
+        <source>Ratchet</source>
+        <target>Cliquets</target>
+      </trans-unit>
+      <trans-unit id="aa7c290d869d5fd11761a75c14d6965d" resname="Conditioning">
+        <source>Conditioning</source>
+        <target>Conditionnement</target>
+      </trans-unit>
+      <trans-unit id="cc0267c03b33e5721b2ff7c8e53497d5" resname="Confort - ESD">
+        <source>Confort - ESD</source>
+        <target>Confort/ESD</target>
+      </trans-unit>
+      <trans-unit id="c1df1da7a1ce305a3b60af9d5733ac1d" resname="Contents">
+        <source>Contents</source>
+        <target>Contenant</target>
+      </trans-unit>
+      <trans-unit id="f372bb77e709e134828f41cc08c2264d" resname="Contents_multi">
+        <source>Contents_multi</source>
+        <target>Contenant</target>
+      </trans-unit>
+      <trans-unit id="ccd53c5a24c018b37c21847044fe3c58" resname="Content set">
+        <source>Content set</source>
+        <target>Contenu</target>
+      </trans-unit>
+      <trans-unit id="4c003fb1f1ddba51568110391e0c4cf2" resname="Content set_multi">
+        <source>Content set_multi</source>
+        <target>Contenu</target>
+      </trans-unit>
+      <trans-unit id="cb5feb1b7314637725a2e73bdc9f7295" resname="Color">
+        <source>Color</source>
+        <target>Couleur</target>
+      </trans-unit>
+      <trans-unit id="1da8c0fbe4f77ee453e3d94a43b90518" resname="Color_multi">
+        <source>Color_multi</source>
+        <target>Couleur</target>
+      </trans-unit>
+      <trans-unit id="eb334dca00e390e0d3ebf52d205807d7" resname="Cut">
+        <source>Cut</source>
+        <target>Coupe</target>
+      </trans-unit>
+      <trans-unit id="1de42578a5158ae64b3bd877c96feb85" resname="Torque N.m">
+        <source>Torque N.m</source>
+        <target>Couple [N.m]</target>
+      </trans-unit>
+      <trans-unit id="38ccf9dec2b91d63d53f9e1dea551dca" resname="Cu - Ni wire diameter [mm]">
+        <source>Cu - Ni wire diameter [mm]</source>
+        <target>Cu - Ni Ø  [mm]</target>
+      </trans-unit>
+      <trans-unit id="8e362cb602d2df9a09a85044d6ce5ba3" resname="Cu - D max [mm2]">
+        <source>Cu - D max [mm2]</source>
+        <target>Cu - Ø max [mm²]</target>
+      </trans-unit>
+      <trans-unit id="6bb549cf5d92db9d16c77ccd6f3359f0" resname="Teeth  [inch]">
+        <source>Teeth  [inch]</source>
+        <target>Dents  ["]</target>
+      </trans-unit>
+      <trans-unit id="32bf34648359bf92df651ec0f55d83a9" resname="Teeth  [cm]">
+        <source>Teeth  [cm]</source>
+        <target>Dents  [cm]</target>
+      </trans-unit>
+      <trans-unit id="7235e04fd5b1a61653b968fe0b62fc0d" resname="Set Description">
+        <source>Set Description</source>
+        <target>Description</target>
+      </trans-unit>
+      <trans-unit id="0ee880a7ee212b7e741686576a0d7e8e" resname="Pims_Description">
+        <source>Pims_Description</source>
+        <target>Description SKU</target>
+      </trans-unit>
+      <trans-unit id="854ee576475a63775d79cbfd6e4b13b6" resname="Product Description">
+        <source>Product Description</source>
+        <target>Désignation</target>
+      </trans-unit>
+      <trans-unit id="b883349e6a49861d7c7b85d968d9afcd" resname="Dimension[mm]">
+        <source>Dimension[mm]</source>
+        <target>Dimensions [mm]</target>
+      </trans-unit>
+      <trans-unit id="a276eb7605e93599dd6f786f4e228075" resname="Dimension[mm]_multi">
+        <source>Dimension[mm]_multi</source>
+        <target>Dimensions [mm]</target>
+      </trans-unit>
+      <trans-unit id="69f69b59aae6f4ee1a47bbc1086ecdb4" resname="Socket">
+        <source>Socket</source>
+        <target>Douille</target>
+      </trans-unit>
+      <trans-unit id="f10034efe0880222e7495496264ee1be" resname="Bits">
+        <source>Bits</source>
+        <target>Embouts</target>
+      </trans-unit>
+      <trans-unit id="1a0e9d4e48b44694077c5177940657e4" resname="Bits_multi">
+        <source>Bits_multi</source>
+        <target>Embouts</target>
+      </trans-unit>
+      <trans-unit id="2c537f2cae310c8c6362881a3ad12c21" resname="Serie Bits">
+        <source>Serie Bits</source>
+        <target>Embouts Série</target>
+      </trans-unit>
+      <trans-unit id="57391192dfa1f247ad015a0fe2eca48e" resname="Pattern">
+        <source>Pattern</source>
+        <target>Empreinte</target>
+      </trans-unit>
+      <trans-unit id="1290434db092b6ba55a17b4014e8702c" resname="Notches">
+        <source>Notches</source>
+        <target>Encoches</target>
+      </trans-unit>
+      <trans-unit id="8af620d0e88d0b58e9cae7ac38fb03b6" resname="Bias error [um]">
+        <source>Bias error [um]</source>
+        <target>Erreur de justesse [µm]</target>
+      </trans-unit>
+      <trans-unit id="da4525eeb7ad3b0caa37b79196a9294a" resname="Puller [mm]">
+        <source>Puller [mm]</source>
+        <target>Extracteur [mm]</target>
+      </trans-unit>
+      <trans-unit id="1d6e858c4b056bd137fc39a3f98fcd1f" resname="Fe wire 30 HRc diameter [mm]">
+        <source>Fe wire 30 HRc diameter [mm]</source>
+        <target>Fe 30 HRc diam. [mm]</target>
+      </trans-unit>
+      <trans-unit id="ed1128ebb358a747bfbabe47ad9cf594" resname="Thread Type">
+        <source>Thread Type</source>
+        <target>Filetage</target>
+      </trans-unit>
+      <trans-unit id="3ef0ded114f9f75c8a5eae491c1f3d59" resname="Thread Female">
+        <source>Thread Female</source>
+        <target>Filetage F</target>
+      </trans-unit>
+      <trans-unit id="1ccb98107866f62cff82137d496899ff" resname="Thread male">
+        <source>Thread male</source>
+        <target>Filetage M</target>
+      </trans-unit>
+      <trans-unit id="fcf6b378a680e0a071a8478ea3c09858" resname="Wire D [mm]">
+        <source>Wire D [mm]</source>
+        <target>Fils Ø [mm]</target>
+      </trans-unit>
+      <trans-unit id="6c1630b4a096988ae3f2037419ee3ac9" resname="Filter [mm]">
+        <source>Filter [mm]</source>
+        <target>Filtre [mm]</target>
+      </trans-unit>
+      <trans-unit id="68ad9ee64d271c80f80ee7f5dd5834dc" resname="Drill Bits">
+        <source>Drill Bits</source>
+        <target>Forets</target>
+      </trans-unit>
+      <trans-unit id="b9ac0dc8af4b7888ad8a404bcf74ee48" resname="Blade profile">
+        <source>Blade profile</source>
+        <target>Forme des lames</target>
+      </trans-unit>
+      <trans-unit id="cd957338498985e538753ea8d071e0f9" resname="GA">
+        <source>GA</source>
+        <target>GA</target>
+      </trans-unit>
+      <trans-unit id="d0a3b9ddaeddd7476aebcd52a83a4da8" resname="Graduation">
+        <source>Graduation</source>
+        <target>Graduation</target>
+      </trans-unit>
+      <trans-unit id="68d95a7feeeeb8821893353b41bcba21" resname="Graduation [lbf.ft]">
+        <source>Graduation [lbf.ft]</source>
+        <target>Graduation [lbf.ft]</target>
+      </trans-unit>
+      <trans-unit id="34851a44286b72244f3828ea30f6003d" resname="Graduation [lbf.in]">
+        <source>Graduation [lbf.in]</source>
+        <target>Graduation [lbf.in]</target>
+      </trans-unit>
+      <trans-unit id="2bf66721afb32db7f40027ca0ff21fff" resname="Graduation [N.m]">
+        <source>Graduation [N.m]</source>
+        <target>Graduation [N.m]</target>
+      </trans-unit>
+      <trans-unit id="48423a9049b3065103ef1026a5fa08e5" resname="Legs">
+        <source>Legs</source>
+        <target>Griffes</target>
+      </trans-unit>
+      <trans-unit id="8a7fa153279a0126f601e6eb63d0f626" resname="Legs_multi">
+        <source>Legs_multi</source>
+        <target>Griffes</target>
+      </trans-unit>
+      <trans-unit id="61ff86e29f902a6941ed1ccea1e4fad3" resname="Specification_ISO">
+        <source>Specification_ISO</source>
+        <target>ISO</target>
+      </trans-unit>
+      <trans-unit id="0575acc037df88d2298d72eed69c3498" resname="Specification_ISO PLUS">
+        <source>Specification_ISO PLUS</source>
+        <target>ISO PLUS</target>
+      </trans-unit>
+      <trans-unit id="1ea52f26e7e0ce08e462f87f5e35096c" resname="Blade">
+        <source>Blade</source>
+        <target>Lame</target>
+      </trans-unit>
+      <trans-unit id="211fa031e3826f759724f12b994640b5" resname="Files_multi">
+        <source>Files_multi</source>
+        <target>Limes</target>
+      </trans-unit>
+      <trans-unit id="91f3a2c0e4424c87689525da44c4db11" resname="Files">
+        <source>Files</source>
+        <target>Limes</target>
+      </trans-unit>
+      <trans-unit id="7ce584336633121ef5ad264e57679d27" resname="Blade Length [mm]">
+        <source>Blade Length [mm]</source>
+        <target>Longueur lame [mm]</target>
+      </trans-unit>
+      <trans-unit id="c0eab4629ee23a645d4747074335ba60" resname="Handle">
+        <source>Handle</source>
+        <target>Manche</target>
+      </trans-unit>
+      <trans-unit id="0f1018b98918d9636c0683ba0aaea314" resname="Diameter maximum [mm]">
+        <source>Diameter maximum [mm]</source>
+        <target>Maxi [mm]</target>
+      </trans-unit>
+      <trans-unit id="a916e92658ab6c276363d75bfa0997bd" resname="Model Size [in]">
+        <source>Model Size [in]</source>
+        <target>Modèle</target>
+      </trans-unit>
+      <trans-unit id="e55f75a29310d7b60f7ac1d390c8ae42" resname="Module">
+        <source>Module</source>
+        <target>Module</target>
+      </trans-unit>
+      <trans-unit id="fbd39fe0ecd01afaf01ea1957ef4a57c" resname="No.">
+        <source>No.</source>
+        <target>No.</target>
+      </trans-unit>
+      <trans-unit id="71dc522d3cfb059bfd6dee9bb52dbb40" resname="Number of Blades">
+        <source>Number of Blades</source>
+        <target>Nombre de lames</target>
+      </trans-unit>
+      <trans-unit id="5ebdffcfd6e2a17d8c597b74290c8f32" resname="Number of Blades_multi">
+        <source>Number of Blades_multi</source>
+        <target>Nombre de lames</target>
+      </trans-unit>
+      <trans-unit id="5eb965312987d05f9a0a676b947261e3" resname="Norm">
+        <source>Norm</source>
+        <target>Norme</target>
+      </trans-unit>
+      <trans-unit id="a8ac9224b5f26dfc749fa009594841ba" resname="Diameter Peak [mm]">
+        <source>Diameter Peak [mm]</source>
+        <target>Ø de panne [mm]</target>
+      </trans-unit>
+      <trans-unit id="a608ef3c84a185ce9a46cd796df9740e" resname="Diameter maxi [mm]: 60 - 140 - 160 kg/mm2">
+        <source>Diameter maxi [mm]: 60 - 140 - 160 kg/mm2</source>
+        <target>Ø maxi [mm] : 60-140-160 kg/mm²</target>
+      </trans-unit>
+      <trans-unit id="f54ac88c54d11bb85e6c330ef789d65f" resname="Open Position O maxi [mm]">
+        <source>Open Position O maxi [mm]</source>
+        <target>Ouverture maxi  [mm]</target>
+      </trans-unit>
+      <trans-unit id="ab10412d0f51a85f2e3fa32aa1c74c6b" resname="Open Position O mini [mm]">
+        <source>Open Position O mini [mm]</source>
+        <target>Ouverture mini [mm]</target>
+      </trans-unit>
+      <trans-unit id="26212e60fc25b4712ff9e04eb5fcb542" resname="Open Position O mini-maxi [mm]">
+        <source>Open Position O mini-maxi [mm]</source>
+        <target>Ouverture mini-maxi [mm]</target>
+      </trans-unit>
+      <trans-unit id="100c45389db7e64d4a178e91d8edbaf3" resname="Depth P [mm]">
+        <source>Depth P [mm]</source>
+        <target>P [mm]</target>
+      </trans-unit>
+      <trans-unit id="c4d0acc6cab8dcb4a05b6563445028cb" resname="Depth P maxi [mm]">
+        <source>Depth P maxi [mm]</source>
+        <target>P maxi [mm]</target>
+      </trans-unit>
+      <trans-unit id="a21e600ebbe2eab6697e3087ee1fdb9f" resname="Peak">
+        <source>Peak</source>
+        <target>Panne</target>
+      </trans-unit>
+      <trans-unit id="c9ed1b2158a5d2ba06c8e9912f19d505" resname="Parallelism of measuring faces [um]">
+        <source>Parallelism of measuring faces [um]</source>
+        <target>Parallèlisme des faces de mesures [µm]</target>
+      </trans-unit>
+      <trans-unit id="49f38fe03598e4d63f4a0a8791c9c8b9" resname="PG">
+        <source>PG</source>
+        <target>PG</target>
+      </trans-unit>
+      <trans-unit id="c50e63da2dbd8d5bff63bbcde42d0164" resname="Facom_PG plus">
+        <source>Facom_PG plus</source>
+        <target>PG plus</target>
+      </trans-unit>
+      <trans-unit id="9cad0f6f883d5124f857dbc3fda11f70" resname="Pattern_Screwdriver Phillips [No]">
+        <source>Pattern_Screwdriver Phillips [No]</source>
+        <target>Phillips [No]</target>
+      </trans-unit>
+      <trans-unit id="d6bde8d508c7fcb4b30db1c68b7eb4f0" resname="Piano Diameter [mm]">
+        <source>Piano Diameter [mm]</source>
+        <target>Piano diam. [mm]</target>
+      </trans-unit>
+      <trans-unit id="4aedab6015aef9c93a48d62365282d70" resname="Measuring Range [mm]">
+        <source>Measuring Range [mm]</source>
+        <target>Plage de mesure [mm]</target>
+      </trans-unit>
+      <trans-unit id="2002b074314f399e7f83a607cf1b2a3d" resname="Flatness of measuring surfaces/Max. [um]">
+        <source>Flatness of measuring surfaces/Max. [um]</source>
+        <target>Planéité des surfaces de mesure\ Max [µm]</target>
+      </trans-unit>
+      <trans-unit id="4311c96ed3eec4b8174057683aa9a3e3" resname="Tray">
+        <source>Tray</source>
+        <target>Plateau</target>
+      </trans-unit>
+      <trans-unit id="848c38c91fcb0189d65c35746c884e36" resname="Knob">
+        <source>Knob</source>
+        <target>Poignée</target>
+      </trans-unit>
+      <trans-unit id="3547196c41caabb0443e6cf629a3297d" resname="Mounting Pins">
+        <source>Mounting Pins</source>
+        <target>Porte griffe</target>
+      </trans-unit>
+      <trans-unit id="19af1b1f29c1e479510fbdd5fba04f96" resname="Bit holder">
+        <source>Bit holder</source>
+        <target>Porte-embout</target>
+      </trans-unit>
+      <trans-unit id="4014b6d4ad1968c14cb7228dc5e85509" resname="Beams">
+        <source>Beams</source>
+        <target>Potence</target>
+      </trans-unit>
+      <trans-unit id="39e61d57e9209611edd4f884e9e47c11" resname="For">
+        <source>For</source>
+        <target>Pour</target>
+      </trans-unit>
+      <trans-unit id="2897e0fb22371f329d463fd68513733b" resname="For_multi">
+        <source>For_multi</source>
+        <target>Pour</target>
+      </trans-unit>
+      <trans-unit id="58f35ff67dca5a884506e39067b19368" resname="For Tapp">
+        <source>For Tapp</source>
+        <target>Pour tarauds</target>
+      </trans-unit>
+      <trans-unit id="40eef23a380e89de3853d95c659e1961" resname="Pattern_Screwdriver Pozidriv [No]">
+        <source>Pattern_Screwdriver Pozidriv [No]</source>
+        <target>Pozidriv [No]</target>
+      </trans-unit>
+      <trans-unit id="7ad828cb72da606210195fe07d26223d" resname="Accuracy  [mm]">
+        <source>Accuracy  [mm]</source>
+        <target>Précision  [mm]</target>
+      </trans-unit>
+      <trans-unit id="a20ddccbb6f808ec42cd66323e6c6061" resname="Finish">
+        <source>Finish</source>
+        <target>Présentation</target>
+      </trans-unit>
+      <trans-unit id="9cb0908b73a6a7eee2b602cee4d9e06c" resname="Finish_multi">
+        <source>Finish_multi</source>
+        <target>Présentation</target>
+      </trans-unit>
+      <trans-unit id="19c29f308a5182bec17d266be36a6ba0" resname="Depth [in]">
+        <source>Depth [in]</source>
+        <target>Profondeur ["]</target>
+      </trans-unit>
+      <trans-unit id="b1c5616792a67dc0882d6184f23fde28" resname="Rating [W]">
+        <source>Rating [W]</source>
+        <target>Puissance [W]</target>
+      </trans-unit>
+      <trans-unit id="694e8d1f2ee056f98ee488bdc4982d73" resname="Quantity">
+        <source>Quantity</source>
+        <target>Qté</target>
+      </trans-unit>
+      <trans-unit id="ce4877300b6903b254213cc16f97761d" resname="Set Quantity">
+        <source>Set Quantity</source>
+        <target>Qtés</target>
+      </trans-unit>
+      <trans-unit id="683213b6915add48c14e964106f3d635" resname="DisplaySkuId">
+        <source>DisplaySkuId</source>
+        <target>Référence</target>
+      </trans-unit>
+      <trans-unit id="dcba91c268de97264fb59ebba064adf6" resname="Pattern_Screwdriver Resistorx [No]">
+        <source>Pattern_Screwdriver Resistorx [No]</source>
+        <target>Resistorx [No]</target>
+      </trans-unit>
+      <trans-unit id="b5a4b64b2aa505bd7c11f79b8a9f458d" resname="Resolution">
+        <source>Resolution</source>
+        <target>Résolution</target>
+      </trans-unit>
+      <trans-unit id="cbc63397c883c0ba360c92c1931687e8" resname="Offcut retainer">
+        <source>Offcut retainer</source>
+        <target>Retenue de chute</target>
+      </trans-unit>
+      <trans-unit id="98d0ef6b769b5015508796d5b331dee0" resname="Rigidity Max Horizontal [mm]">
+        <source>Rigidity Max Horizontal [mm]</source>
+        <target>Rigidité Max Horizontale [mm]</target>
+      </trans-unit>
+      <trans-unit id="d90ed20164f8bbf7082c8854648c8b43" resname="Rigidity Max Vertical [mm]">
+        <source>Rigidity Max Vertical [mm]</source>
+        <target>Rigidité Max Verticale [mm]</target>
+      </trans-unit>
+      <trans-unit id="53b3b74fbb8fa52ba30370c13f771a28" resname="Pattern Robertson [No]">
+        <source>Pattern Robertson [No]</source>
+        <target>Robertson [No]</target>
+      </trans-unit>
+      <trans-unit id="9b426e19c2a51e74f40fac7781b0a0b5" resname="Section [mm2]">
+        <source>Section [mm2]</source>
+        <target>Section [mm²]</target>
+      </trans-unit>
+      <trans-unit id="9a71b6e5871c20220a821256d0aac3e3" resname="Cross-section [mm]">
+        <source>Cross-section [mm]</source>
+        <target>Section des marquages [mm]</target>
+      </trans-unit>
+      <trans-unit id="1d79518437d88692eab8be1bfa713257" resname="Outer Size">
+        <source>Outer Size</source>
+        <target>Sortie</target>
+      </trans-unit>
+      <trans-unit id="78dc8b50946835874cd336c3ac33d6a6" resname="Organizer for">
+        <source>Organizer for</source>
+        <target>Support pour</target>
+      </trans-unit>
+      <trans-unit id="ebe39d4ea96d04cda3f6bff917d590fd" resname="Organizer for_multi">
+        <source>Organizer for_multi</source>
+        <target>support pour</target>
+      </trans-unit>
+      <trans-unit id="99e511fbfc43bffb06a7132c41b99a67" resname="Size [mm]">
+        <source>Size [mm]</source>
+        <target>Taille [mm]</target>
+      </trans-unit>
+      <trans-unit id="4cd3bf25a5154b894bf5022fb2321d5e" resname="Size [mm]_multi">
+        <source>Size [mm]_multi</source>
+        <target>Taille [mm]</target>
+      </trans-unit>
+      <trans-unit id="3a68e9aa4449b48d50485682a58383ed" resname="Tamper [No]">
+        <source>Tamper [No]</source>
+        <target>Tamper [No]</target>
+      </trans-unit>
+      <trans-unit id="3404e498817ad814e0adc71b21427f96" resname="Tapping">
+        <source>Tapping</source>
+        <target>Taraudé</target>
+      </trans-unit>
+      <trans-unit id="3dcea9f4c6f28401dd052fb5a9933760" resname="Peak temp plus/minus 10pc">
+        <source>Peak temp plus/minus 10pc</source>
+        <target>Temp. en pointe ± 10% [°]</target>
+      </trans-unit>
+      <trans-unit id="852a8ed91862a37cdc1f4a6e1bb06684" resname="Heating time [mn]">
+        <source>Heating time [mn]</source>
+        <target>Temps de chauffe [mn]</target>
+      </trans-unit>
+      <trans-unit id="e21b71263f008653b6b8b6b778266d44" resname="Voltage\Volt">
+        <source>Voltage\Volt</source>
+        <target>Tension\Volt</target>
+      </trans-unit>
+      <trans-unit id="1f863bff4addde1871f50f65760fd1a5" resname="Tie-rods">
+        <source>Tie-rods</source>
+        <target>Tirant</target>
+      </trans-unit>
+      <trans-unit id="433e735f64befc2043e530d1576a2abf" resname="Ton T">
+        <source>Ton T</source>
+        <target>Tonnes [t]</target>
+      </trans-unit>
+      <trans-unit id="2f9fd9871c1580899305a60e2eb3a20f" resname="Pattern_Screwdriver Torq-set [No]">
+        <source>Pattern_Screwdriver Torq-set [No]</source>
+        <target>Torq-set [No]</target>
+      </trans-unit>
+      <trans-unit id="fc69250c0ec622961ae9c749876fd7eb" resname="Pattern_Screwdriver Torx [No]">
+        <source>Pattern_Screwdriver Torx [No]</source>
+        <target>Torx [No]</target>
+      </trans-unit>
+      <trans-unit id="deb0087ee4e1d9bdddd882b20fd73c7c" resname="Screwdriver">
+        <source>Screwdriver</source>
+        <target>Tournevis</target>
+      </trans-unit>
+      <trans-unit id="031ab8837f49c3449b07f4c5a77f497c" resname="tr/min">
+        <source>tr/min</source>
+        <target>tr/min</target>
+      </trans-unit>
+      <trans-unit id="d2dd7dc5962e72b9a7354b46c70bd6d9" resname="Thread Forms">
+        <source>Thread Forms</source>
+        <target>Type de pas</target>
+      </trans-unit>
+      <trans-unit id="b3a9d35492974d316d3fe3333546eb59" resname="Thread Forms_multi">
+        <source>Thread Forms_multi</source>
+        <target>Type de pas</target>
+      </trans-unit>
+      <trans-unit id="c3a7d7b2da8f76d16d020f2575c79fe8" resname="For use on">
+        <source>For use on</source>
+        <target>Utilisation pour</target>
+      </trans-unit>
+      <trans-unit id="40687c8206d15373954d8b27c6724f62" resname="Jack">
+        <source>Jack</source>
+        <target>Vérin</target>
+      </trans-unit>
+      <trans-unit id="51e09a031e25b64cc4a964626c5c1d56" resname="Screw Size">
+        <source>Screw Size</source>
+        <target>Vis</target>
+      </trans-unit>
+      <trans-unit id="1c5aeeedae5e9716b1aa0cd99474b5a1" resname="Screw Size[mm]">
+        <source>Screw Size[mm]</source>
+        <target>Vis [mm]</target>
+      </trans-unit>
+      <trans-unit id="751428788334a0074882c60b6ebc8628" resname="Screw Size[mm]_multi">
+        <source>Screw Size[mm]_multi</source>
+        <target>Vis [mm]</target>
+      </trans-unit>
+      <trans-unit id="70cda447ebdc384f7743c35e7da1da69" resname="Maximum RPM [mm]">
+        <source>Maximum RPM [mm]</source>
+        <target>Vitesse maximale [tr/mm]</target>
+      </trans-unit>
+      <trans-unit id="af940003e4f89dc5fb93d48c0d263566" resname="Pattern XZN [No]">
+        <source>Pattern XZN [No]</source>
+        <target>XZN [No]</target>
+      </trans-unit>
+      <trans-unit id="a66f466b5ad52ae201e39b0b38f6c1db" resname="Pims_OverviewImage">
+        <source>Pims_OverviewImage</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="75486b7bb5a8e4865a0dc5d052083ae8" resname="Pims_Drawings">
+        <source>Pims_Drawings</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="345b84f29cb3e3b57f09580ef2f4a6ad" resname="OtherImages">
+        <source>OtherImages</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="c1062785dba341fbd35062503983abdd" resname="OtherDrawings">
+        <source>OtherDrawings</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="eacdd285b887aa04b41441a6ee160c6c" resname="BrandLogo">
+        <source>BrandLogo</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="19144abce989a9a141e07ebd958cad31" resname="Weight [g]">
+        <source>Weight [g]</source>
+        <target>[g]</target>
+      </trans-unit>
+      <trans-unit id="a278b5cf4946e5da31962b5045f7379f" resname="Weight maxi [g]">
+        <source>Weight maxi [g]</source>
+        <target>[g] maxi</target>
+      </trans-unit>
+      <trans-unit id="91aadd16af0324928c06a9b52d638701" resname="Weight [kg]">
+        <source>Weight [kg]</source>
+        <target>[kg]</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
