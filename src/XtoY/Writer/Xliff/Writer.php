@@ -76,7 +76,10 @@ class Xliff_Writer  extends Optionnable implements WriterInterface{
     }
     
     public function writeAll($table) {
-        
+        foreach($table as $line)
+        {
+            $this->write($line);
+        }
     }
     
       public function  postprocessing(){
