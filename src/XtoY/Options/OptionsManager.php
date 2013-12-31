@@ -73,7 +73,7 @@ class OptionsManager
 
        if(!isset($this->options[$optionName]))
        {
-         throw new Exception('Unknow Option Set :'. $optionName);
+         throw new \Exception('Unknow Option Set :'. $optionName);
        }
        $this->options[$optionName] = $value;
 
