@@ -17,22 +17,26 @@ class Mapper implements MapperInterface {
     public function applyRule($line,$ruleConfig) {
         
         $returnValue = null;
-        $field = $line[$ruleConfig['src']];
-        
-        if(isset($ruleConfig['callback'])) {
-          $callback  = $ruleConfig['callback'];
-          if(is_callable($callback)) {
-              call_user_func($callback, $field);
-          }
-        } else {
-           $returnValue =$field;
+        if(isset($ruleConfig['src'])) {
+            $field = $line[$ruleConfig['src']];
+
+            if(isset($ruleConfig['callback'])) {
+              $callback  = $ruleConfig['callback'];
+              if(is_callable($callback)) {
+                 $returnValue= call_user_func($callback, $field);
+              }
+            } else {
+               $returnValue =$field;
+            }
         }
+         if(isset($ruleConfig['value'])) {
+            $returnValue =$ruleConfig['value']; 
+         }
         
         return $returnValue;
     }
     
     public function convert($line) {
-        
         $returnValue = array();
         $rules = $this->getRules();
         foreach($rules as $outputField=>$ruleConfig) {
