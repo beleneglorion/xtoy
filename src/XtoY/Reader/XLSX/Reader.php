@@ -16,6 +16,7 @@ class XLSX_Reader extends Optionnable implements ReaderInterface {
        parent::__construct();
        
         $this->addOption('skip','0');
+        $this->addOption('worksheet','');
         $this->getOptionManager()->init($options);
    }
     
@@ -42,11 +43,36 @@ class XLSX_Reader extends Optionnable implements ReaderInterface {
             throw new \Exception(sprintf('File is not readable(%s)',$filename));
         }
         $this->handler = new \SpreadsheetReader($filename,false);
-
+        // changing worksheet if needed
+        $sheet = $this->getOption('worksheet');
+        if(!empty($sheet)) {
+            if(!is_numeric($sheet)) {
+                $index =  $this->getSheetIndexForName($sheet);
+                // the rewing  is done only if index > 0 then move next before
+                $this->handler->next();
+                $this->handler->ChangeSheet($index);
+            } else  {
+                 $this->handler->next();
+                $this->handler->ChangeSheet($sheet);
+            }
+        }
+       }
+   }
+   
+   public function getSheetIndexForName($sheetname) {
+       $returnValue = 1;
+       $sheets = $this->handler->sheets();
+       foreach($sheets as $idx=>$name) {
+           if($name == $sheetname) {
+               $returnValue = $idx;
+               break;
+           }
+           
        }
        
-       
+       return $returnValue;
    }
+   
    
    public function close()
    {
