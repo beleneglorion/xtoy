@@ -9,7 +9,7 @@ Writer:
    options :
      source-language : 'default'
      target-language : 'fr'
-     original : input.csv
+     original : input.xls
    ddn: output.xlf  
    
 Mapper:
