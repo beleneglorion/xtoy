@@ -24,6 +24,11 @@ abstract class Builder {
         $writer->setDDN($ddn);
 
         $uc = new XtoY();
+        if(isset($config['XtoY'])) {
+           if(isset($config['XtoY']['mode'])) {
+               $uc->setMode($config['XtoY']['mode']);
+           }
+        }
         $uc->setMapper($mapper);
         $uc->setReader($reader);
         $uc->setWriter($writer);
