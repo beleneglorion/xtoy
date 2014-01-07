@@ -17,6 +17,7 @@ class XLSX_Reader extends Optionnable implements ReaderInterface {
        
         $this->addOption('skip','0');
         $this->addOption('worksheet','');
+        $this->addOption('options',array('SharedStringCacheLimit'=>50000));
         $this->getOptionManager()->init($options);
    }
     
@@ -42,7 +43,7 @@ class XLSX_Reader extends Optionnable implements ReaderInterface {
          if(!is_readable($filename)) {
             throw new \Exception(sprintf('File is not readable(%s)',$filename));
         }
-        $this->handler = new \SpreadsheetReader($filename,false);
+        $this->handler = new \SpreadsheetReader($filename,false,false,$this->getOption('options'));
         // changing worksheet if needed
         $sheet = $this->getOption('worksheet');
         if(!empty($sheet)) {
