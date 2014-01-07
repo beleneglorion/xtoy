@@ -3,25 +3,7 @@
     "type": "library",
     "description": "A simple mechanism to convert thing X to another thing Y  csv->xml rss->database",
     "keywords": ["excel", "spreadsheet", "document", "xml", "csv", "tsv", "html", "json", "reader", "converter", "writer"],
-    "homepage": "http://beleneglorion.github.com/xtoy",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/beleneglorion/xtoy.git"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "nuovo/spreadsheet-reader",
-                "version": "master",
-                "source": {
-                    "url": "https://github.com/nuovo/spreadsheet-reader.git",
-                    "type": "git",
-                    "reference": "master"
-                }
-            }
-        }
-    ],
+    "homepage": "http://beleneglorion.github.io/xtoy",
     "license": "MIT",
     "authors": [
         {
@@ -31,17 +13,29 @@
             "role": "Developer"
         }
     ],
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "beleneglorion/spreadsheet-reader",
+                "version": "master",
+                "source": {
+                    "url": "https://github.com/beleneglorion/spreadsheet-reader.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        }
+    ],
     "require": {
-        "php": ">=5.3.0",
+        "php": ">=5.3.3",
         "php-excel-reader/spreadsheet-reader": "dev-master",
-        "symfony/config": ">=2.2",
         "symfony/yaml": ">=2.2",
-        "nuovo/spreadsheet-reader" : "dev-master"
+        "beleneglorion/spreadsheet-reader" : "dev-master"
 
     },
-
     "autoload": {
         "psr-0": {"XtoY\\": "src/"},
-        "classmap": ["vendor/nuovo/"]
+        "classmap": ["vendor/beleneglorion/"]
     }
 }
