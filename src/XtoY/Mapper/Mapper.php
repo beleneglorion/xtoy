@@ -46,9 +46,18 @@ class Mapper implements MapperInterface {
         return $returnValue;
     }
     
-    public function batchConvert($table) {
+    public function batchConvert($datas) {
         
+        $returnValue = array();
+        $rules = $this->getRules();
+        foreach($datas as $idx=>$line){
+            $returnValue[$idx] = array();
+            foreach($rules as $outputField=>$ruleConfig) {
+                  $returnValue[$idx][$outputField] = $this->applyRule($line,$ruleConfig);
+            }
+        }
         
+        return $returnValue;
     }
     
     public function getRules()

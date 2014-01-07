@@ -77,10 +77,10 @@ class XtoY {
             $this->reader->preprocessing();
             $datas = $this->reader->fetchAll();
             $this->reader->close();
-            $datas = $this->mapper->batchConvert($datas);
+            $mapped = $this->mapper->batchConvert($datas);
             $this->writer->open();
             $this->writer->preprocessing();
-            $this->writer->writeAll($datas);
+            $this->writer->writeAll($mapped);
             $this->writer->postprocessing();
             $this->writer->close();
         }
