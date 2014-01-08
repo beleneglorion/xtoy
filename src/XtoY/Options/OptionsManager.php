@@ -7,12 +7,11 @@ class OptionsManager
   protected $options,
             $required_options;
 
-
      public function __construct()
      {
        $this->options = array();
-       $this->required_options = array();   
-       
+       $this->required_options = array();
+
      }
 
      public function configure()
@@ -21,14 +20,11 @@ class OptionsManager
 
      public function init($options)
      {
-       if(!empty($this->required_options)) {
-        foreach ($this->required_options as $name)
-        {
-          if(!isset($options[$name]))
-          {
+       if (!empty($this->required_options)) {
+        foreach ($this->required_options as $name) {
+          if (!isset($options[$name])) {
               throw new \Exception('Missing Option :'. $name);
           }
-
 
         }
        }
@@ -38,14 +34,13 @@ class OptionsManager
 
      public function setOptions($options)
      {
-        foreach ($options as $name=>$value)
-        {
+        foreach ($options as $name=>$value) {
           $this->setOption($name,$value);
 
         }
 
      }
-     
+
      public function getOptions()
      {
        return $this->options;
@@ -67,12 +62,10 @@ class OptionsManager
 
      }
 
-
      public function setOption($optionName, $value)
      {
 
-       if(!isset($this->options[$optionName]))
-       {
+       if (!isset($this->options[$optionName])) {
          throw new \Exception('Unknow Option Set :'. $optionName);
        }
        $this->options[$optionName] = $value;
@@ -81,15 +74,12 @@ class OptionsManager
 
      public function getOption($optionName)
      {
-        if(!isset($this->options[$optionName]))
-       {
+        if (!isset($this->options[$optionName])) {
          throw new \Exception('Unknow Option Get :'. $optionName);
        }
+
       return  $this->options[$optionName];
 
      }
-
-
-
 
 }

@@ -8,12 +8,11 @@ use XtoY\XtoY;
  *
  * @author sebastien
  */
-abstract class Builder {
-
-    
+abstract class Builder
+{
      protected static  function build($config)
      {
-         
+
         $dsn = $config['Reader']['dsn'];
         $ddn = $config['Writer']['ddn'];
         $reader = new $config['Reader']['class']($config['Reader']['options']);
@@ -24,8 +23,8 @@ abstract class Builder {
         $writer->setDDN($ddn);
 
         $uc = new XtoY();
-        if(isset($config['XtoY'])) {
-           if(isset($config['XtoY']['mode'])) {
+        if (isset($config['XtoY'])) {
+           if (isset($config['XtoY']['mode'])) {
                $uc->setMode($config['XtoY']['mode']);
            }
         }
@@ -34,12 +33,7 @@ abstract class Builder {
         $uc->setWriter($writer);
 
         return $uc;
- 
+
      }
-     
-     
-    
-    
+
 }
-
-

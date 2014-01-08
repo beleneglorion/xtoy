@@ -6,8 +6,8 @@ use XtoY\Reader\ReaderInterface;
 use XtoY\Mapper\MapperInterface;
 use XtoY\Writer\WriterInterface;
 
-class XtoY {
-
+class XtoY
+{
     const MODE_SEQUENTIAL = 'sequential';
     const MODE_FULL = 'full';
 
@@ -16,29 +16,32 @@ class XtoY {
             $mapper,
             $writer;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->setMode(self::MODE_SEQUENTIAL);
         ;
     }
 
-    public function setReader(ReaderInterface $reader) {
+    public function setReader(ReaderInterface $reader)
+    {
         $this->reader = $reader;
     }
 
-    public function setMapper(MapperInterface $mapper) {
-
+    public function setMapper(MapperInterface $mapper)
+    {
         $this->mapper = $mapper;
     }
 
-    public function setWriter(WriterInterface $writer) {
+    public function setWriter(WriterInterface $writer)
+    {
         $this->writer = $writer;
     }
 
-    public function setMode($mode) {
-
+    public function setMode($mode)
+    {
         $this->mode = $mode;
     }
-    
+
     public function getReader()
     {
         return $this->reader;
@@ -52,13 +55,13 @@ class XtoY {
         return $this->mapper;
     }
 
-    public function getMode() {
-
+    public function getMode()
+    {
         return $this->mode;
     }
 
-    public function run() {
-
+    public function run()
+    {
         if ($this->mode == self::MODE_SEQUENTIAL) {
             $this->reader->open();
             $this->writer->open();

@@ -9,70 +9,68 @@ use XtoY\Mapper\MapperInterface;
  *
  * @author sebastien
  */
-class Mapper implements MapperInterface {
-   
+class Mapper implements MapperInterface
+{
     protected $rules;
-    
-    
-    public function applyRule($line,$ruleConfig) {
-        
+
+    public function applyRule($line,$ruleConfig)
+    {
         $returnValue = null;
-        if(isset($ruleConfig['src'])) {
+        if (isset($ruleConfig['src'])) {
             $field = $line[$ruleConfig['src']];
 
-            if(isset($ruleConfig['callback'])) {
+            if (isset($ruleConfig['callback'])) {
               $callback  = $ruleConfig['callback'];
-              if(is_callable($callback)) {
+              if (is_callable($callback)) {
                  $returnValue= call_user_func($callback, $field);
               }
             } else {
                $returnValue =$field;
             }
         }
-         if(isset($ruleConfig['value'])) {
-            $returnValue =$ruleConfig['value']; 
+         if (isset($ruleConfig['value'])) {
+            $returnValue =$ruleConfig['value'];
          }
-        
+
         return $returnValue;
     }
-    
-    public function convert($line) {
+
+    public function convert($line)
+    {
         $returnValue = array();
         $rules = $this->getRules();
-        foreach($rules as $outputField=>$ruleConfig) {
+        foreach ($rules as $outputField=>$ruleConfig) {
             $returnValue[$outputField] = $this->applyRule($line,$ruleConfig);
         }
-        
+
         return $returnValue;
     }
-    
-    public function batchConvert($datas) {
-        
+
+    public function batchConvert($datas)
+    {
         $returnValue = array();
         $rules = $this->getRules();
-        foreach($datas as $idx=>$line){
+        foreach ($datas as $idx=>$line) {
             $returnValue[$idx] = array();
-            foreach($rules as $outputField=>$ruleConfig) {
+            foreach ($rules as $outputField=>$ruleConfig) {
                   $returnValue[$idx][$outputField] = $this->applyRule($line,$ruleConfig);
             }
         }
-        
+
         return $returnValue;
     }
-    
+
     public function getRules()
     {
         return $this->rules;
-        
+
     }
-    
-    public function setRules($rules) {
-        
+
+    public function setRules($rules)
+    {
         $this->rules = $rules;
-        
+
         return $this;
     }
-    
-    
-}
 
+}

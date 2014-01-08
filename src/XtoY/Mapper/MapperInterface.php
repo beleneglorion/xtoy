@@ -2,18 +2,15 @@
 
 namespace XtoY\Mapper;
 
-
 /**
  * Description of MapperInterface
  *
  * @author sebastien
  */
-interface MapperInterface {
-   
+interface MapperInterface
+{
     public function convert($line);
-    
-    public function batchConvert($table);
-    
-    
-}
 
+    public function batchConvert($table);
+
+}

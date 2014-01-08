@@ -5,62 +5,60 @@ namespace XtoY\Writer;
 use XtoY\Writer\WriterInterface;
 use XtoY\Options\Optionnable;
 /**
- * A simple of Xliff_Writer inspired from symfony XliffFileDumper 
+ * A simple of Xliff_Writer inspired from symfony XliffFileDumper
  *
  * @author Seéastien Thibault <contact@sebastien-thibault.com>
  * @author Michel Salib <michelsalib@hotmail.com>
  */
-class Xliff_Writer  extends Optionnable implements WriterInterface{
-
+class Xliff_Writer  extends Optionnable implements WriterInterface
+{
     protected $ddn;
     protected $document;
     protected $body;
-     
-    
-   public function __construct($options) {
+
+   public function __construct($options)
+   {
        parent::__construct();
 
         $this->addRequiredOption('source-language');
         $this->addRequiredOption('target-language');
         $this->addOption('original','');
         $this->getOptionManager()->init($options);
-        
-   } 
-    public function setDDN($ddn) {
+
+   }
+    public function setDDN($ddn)
+    {
        $this->ddn = $ddn;
     }
-    
+
     public function getDDN()
     {
       return $this->ddn;
     }
-  
 
     public function open()
    {
-       if(!isset($this->document)) {
+       if (!isset($this->document)) {
         $filename = $this->getDDN();
-        if(file_exists($filename)) {
+        if (file_exists($filename)) {
             throw new \Exception(sprintf('File exist (%s)',$filename));
         }
-         if(!is_writable(dirname($filename))) {
+         if (!is_writable(dirname($filename))) {
             throw new \Exception(sprintf('Directeory is not writable (%s)',dirname($filename)));
         }
         $this->document = new \DOMDocument('1.0', 'utf-8');
 
-
        }
-       
-       
+
    }
-   
+
    public function close()
    {
-      if(isset($this->document)) { 
+      if (isset($this->document)) {
          $this->document->save($this->getDDN());
       }
    }
-   
+
     public function write($line)
     {
         $translation = $this->document->createElement('trans-unit');
@@ -71,23 +69,22 @@ class Xliff_Writer  extends Optionnable implements WriterInterface{
         $t = $translation->appendChild($this->document->createElement('target'));
         $t->appendChild($this->document->createTextNode($line['target']));
         $this->body->appendChild($translation);
-      
-  
+
     }
-    
-    public function writeAll($table) {
-        foreach($table as $line)
-        {
+
+    public function writeAll($table)
+    {
+        foreach ($table as $line) {
             $this->write($line);
         }
     }
-    
-      public function  postprocessing(){
-          
+
+      public function postprocessing()
+      {
       }
-      
-   public function  preprocessing() {
-     
+
+   public function preprocessing()
+   {
         $this->document->formatOutput = true;
         $options = $this->getOptions();
         $xliff = $this->document->appendChild($this->document->createElement('xliff'));
@@ -97,14 +94,13 @@ class Xliff_Writer  extends Optionnable implements WriterInterface{
         $xliffFile = $xliff->appendChild( $this->document->createElement('file'));
         $xliffFile->setAttribute('source-language',$options['source-language']);
         $xliffFile->setAttribute('target-language',$options['target-language']);
-        if(!empty($options['original'])) {
+        if (!empty($options['original'])) {
           $xliffFile->setAttribute('original',$options['original']);
         }
         $xliffFile->setAttribute('datatype', 'plaintext');
        // $xliffFile->setAttribute('original', 'file.ext');
 
         $this->body = $xliffFile->appendChild($this->document->createElement('body'));
-   }  
-    
-}
+   }
 
+}

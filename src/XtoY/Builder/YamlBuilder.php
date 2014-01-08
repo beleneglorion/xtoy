@@ -8,16 +8,13 @@ use Symfony\Component\Yaml\Yaml;
  *
  * @author sebastien
  */
-class YamlBuilder extends Builder {
-  
-    
-   public static function getConverter($configFile) {
-       
+class YamlBuilder extends Builder
+{
+   public static function getConverter($configFile)
+   {
        $config = Yaml::parse($configFile);
-       
+
        return self::build($config);
    }
-    
-    
-}
 
+}
