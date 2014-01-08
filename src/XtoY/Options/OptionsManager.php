@@ -66,7 +66,7 @@ class OptionsManager
      {
 
        if (!isset($this->options[$optionName])) {
-         throw new \Exception('Unknow Option Set :'. $optionName);
+         throw new \Exception(sprintf('Set unknow Option "%s" Existing options are "%s" :', $optionName,implode('","',array_keys($this->options))));
        }
        $this->options[$optionName] = $value;
 
@@ -75,7 +75,7 @@ class OptionsManager
      public function getOption($optionName)
      {
         if (!isset($this->options[$optionName])) {
-         throw new \Exception('Unknow Option Get :'. $optionName);
+           throw new \Exception(sprintf('Get unknow Option "%s" Existing options are "%s" :', $optionName,implode('","',array_keys($this->options))));
        }
 
       return  $this->options[$optionName];
