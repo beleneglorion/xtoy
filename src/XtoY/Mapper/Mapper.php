@@ -19,21 +19,21 @@ class Mapper implements MapperInterface
         if (isset($ruleConfig['src'])) {
             if (is_array($ruleConfig['src'])) {
                 $data = array();
-                foreach($ruleConfig['src'] as $field) {
+                foreach ($ruleConfig['src'] as $field) {
                     $data[$field] = $line[$field];
                 }
 
-            } elseif($ruleConfig['src'] === '*') {
+            } elseif ($ruleConfig['src'] === '*') {
                 $data = $line;
             } else {
                 $data = $line[$ruleConfig['src']];
             }
             if (isset($ruleConfig['exclude']) && is_array($ruleConfig['exclude']) && is_array($data)) {
-               foreach($ruleConfig['exclude'] as $field) {
+               foreach ($ruleConfig['exclude'] as $field) {
                    unset($data[$field]);
         }
             }
-           
+
             if (isset($ruleConfig['callback'])) {
                $callback  = $ruleConfig['callback'];
                if (is_callable($callback)) {
