@@ -25,7 +25,7 @@ class CSVReader extends Optionnable implements ReaderInterface
    public function setDSN($dsn)
    {
 
-      $this->dsn = $dsn;;
+      $this->dsn = $dsn;
    }
 
    public function getDSN()
