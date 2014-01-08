@@ -1,5 +1,5 @@
 Reader:
-  class : XtoY\Reader\CSV_Reader
+  class : XtoY\Reader\CSVReader
   options : 
       delimiter: ";"
       enclosure: '"'
@@ -9,7 +9,7 @@ Reader:
   dsn : input.csv
   
 Writer:
-   class : XtoY\Writer\Xliff_Writer
+   class : XtoY\Writer\XliffWriter
    options :
      source-language : 'default'
      target-language : 'en'

@@ -5,7 +5,7 @@ namespace XtoY\Reader;
 use XtoY\Reader\ReaderInterface;
 use XtoY\Options\Optionnable;
 
-class XLSX_Reader extends Optionnable implements ReaderInterface
+class CSVReader extends Optionnable implements ReaderInterface
 {
    protected $dsn;
    protected $handler;
@@ -14,9 +14,11 @@ class XLSX_Reader extends Optionnable implements ReaderInterface
    {
        parent::__construct();
 
+        $this->addOption('delimiter',';');
+        $this->addOption('enclosure','"');
+        $this->addOption('length','1024');
+        $this->addOption('escape','\\');
         $this->addOption('skip','0');
-        $this->addOption('worksheet','');
-        $this->addOption('options',array('SharedStringCacheLimit'=>50000));
         $this->getOptionManager()->init($options);
    }
 
@@ -41,54 +43,27 @@ class XLSX_Reader extends Optionnable implements ReaderInterface
          if (!is_readable($filename)) {
             throw new \Exception(sprintf('File is not readable(%s)',$filename));
         }
-        $this->handler = new \SpreadsheetReader($filename,false,false,$this->getOption('options'));
-        // changing worksheet if needed
-        $sheet = $this->getOption('worksheet');
-        if (!empty($sheet)) {
-            if (!is_numeric($sheet)) {
-                $index =  $this->getSheetIndexForName($sheet);
-                // the rewing  is done only if index > 0 then move next before
-                $this->handler->next();
-                $this->handler->ChangeSheet($index);
-            } else {
-                 $this->handler->next();
-                $this->handler->ChangeSheet($sheet);
-            }
+        $this->handler = fopen($filename, 'r');
+        if (!is_resource($this->handler)) {
+             throw new \Exception(sprintf('Could not open (%s) for reading',$filename));
         }
-       }
-   }
-
-   public function getSheetIndexForName($sheetname)
-   {
-       $returnValue = 1;
-       $sheets = $this->handler->sheets();
-       foreach ($sheets as $idx=>$name) {
-           if ($name == $sheetname) {
-               $returnValue = $idx;
-               break;
-           }
 
        }
 
-       return $returnValue;
    }
 
    public function close()
    {
-      if (isset($this->handler)) {
-          unset($this->handler);
+      if (isset($this->handler) && is_resource($this->handler)) {
+          fclose($this->handler);
       }
    }
 
    public function fetch()
    {
-       $returnValue = false;
-       if ($this->handler->valid()) {
-            $returnValue = $this->handler->current();
-            $this->handler->next();
-       }
+       $options = $this->getOptionManager()->getOptions();
 
-       return $returnValue;;
+       return fgetcsv($this->handler,$options['length'],$options['delimiter'],$options['enclosure'],$options['escape']);
 
    }
 

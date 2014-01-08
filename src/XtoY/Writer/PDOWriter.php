@@ -9,7 +9,7 @@ use XtoY\Options\Optionnable;
  *
  * @author Seéastien Thibault <contact@sebastien-thibault.com>
  */
-class PDO_Writer  extends Optionnable implements WriterInterface
+class PDOWriter  extends Optionnable implements WriterInterface
 {
     protected $ddn;
     /**

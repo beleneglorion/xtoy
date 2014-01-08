@@ -9,7 +9,7 @@ use XtoY\Options\Optionnable;
  *
  * @author Seéastien Thibault <contact@sebastien-thibault.com>
  */
-class SQL_Writer  extends Optionnable implements WriterInterface
+class SQLWriter  extends Optionnable implements WriterInterface
 {
     protected $ddn;
     protected $document;

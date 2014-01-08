@@ -6,7 +6,7 @@ use XtoY\Reader\ReaderInterface;
 use XtoY\Options\Optionnable;
 use PHPExcelReader\SpreadsheetReader;
 
-class XLS_Reader extends Optionnable implements ReaderInterface
+class XLSReader extends Optionnable implements ReaderInterface
 {
    protected $dsn;
    protected $handler;

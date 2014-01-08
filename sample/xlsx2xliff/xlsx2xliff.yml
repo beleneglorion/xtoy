@@ -1,11 +1,11 @@
 Reader:
-  class : XtoY\Reader\XLSX_Reader
+  class : XtoY\Reader\XLSXReader
   options : 
       skip: 1
   dsn : input.xlsx
   
 Writer:
-   class : XtoY\Writer\Xliff_Writer
+   class : XtoY\Writer\XliffWriter
    options :
      source-language : 'default'
      target-language : 'fr'
