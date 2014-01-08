@@ -17,15 +17,30 @@ class Mapper implements MapperInterface
     {
         $returnValue = null;
         if (isset($ruleConfig['src'])) {
-            $field = $line[$ruleConfig['src']];
+            if (is_array($ruleConfig['src'])) {
+                $data = array();
+                foreach($ruleConfig['src'] as $field) {
+                    $data[$field] = $line[$field];
+                }
 
-            if (isset($ruleConfig['callback'])) {
-              $callback  = $ruleConfig['callback'];
-              if (is_callable($callback)) {
-                 $returnValue= call_user_func($callback, $field);
-              }
+            } elseif($ruleConfig['src'] === '*') {
+                $data = $line;
             } else {
-               $returnValue =$field;
+                $data = $line[$ruleConfig['src']];
+            }
+            if (isset($ruleConfig['exclude']) && is_array($ruleConfig['exclude']) && is_array($data)) {
+               foreach($ruleConfig['exclude'] as $field) {
+                   unset($data[$field]);
+        }
+            }
+           
+            if (isset($ruleConfig['callback'])) {
+               $callback  = $ruleConfig['callback'];
+               if (is_callable($callback)) {
+                 $returnValue= call_user_func($callback, $data);
+               }
+            } else {
+               $returnValue = $data;
             }
         }
          if (isset($ruleConfig['value'])) {
