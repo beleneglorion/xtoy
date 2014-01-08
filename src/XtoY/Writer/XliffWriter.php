@@ -5,12 +5,12 @@ namespace XtoY\Writer;
 use XtoY\Writer\WriterInterface;
 use XtoY\Options\Optionnable;
 /**
- * A simple of Xliff_Writer inspired from symfony XliffFileDumper
+ * A simple of XliffWriter inspired from symfony XliffFileDumper
  *
  * @author Seéastien Thibault <contact@sebastien-thibault.com>
  * @author Michel Salib <michelsalib@hotmail.com>
  */
-class Xliff_Writer  extends Optionnable implements WriterInterface
+class XliffWriter  extends Optionnable implements WriterInterface
 {
     protected $ddn;
     protected $document;
@@ -98,7 +98,6 @@ class Xliff_Writer  extends Optionnable implements WriterInterface
           $xliffFile->setAttribute('original',$options['original']);
         }
         $xliffFile->setAttribute('datatype', 'plaintext');
-       // $xliffFile->setAttribute('original', 'file.ext');
 
         $this->body = $xliffFile->appendChild($this->document->createElement('body'));
    }
