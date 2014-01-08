@@ -5,7 +5,7 @@ namespace XtoY\Writer;
 use XtoY\Writer\WriterInterface;
 use XtoY\Options\Optionnable;
 /**
- * A simple of SQL_Writer
+ * A simple of SQLWriter
  *
  * @author Seéastien Thibault <contact@sebastien-thibault.com>
  */

@@ -5,7 +5,7 @@ namespace XtoY\Writer;
 use XtoY\Writer\WriterInterface;
 use XtoY\Options\Optionnable;
 /**
- * A simple of PDO_Writer
+ * A simple of PDOWriter
  *
  * @author Seéastien Thibault <contact@sebastien-thibault.com>
  */
