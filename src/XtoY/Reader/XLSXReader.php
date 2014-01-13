@@ -9,12 +9,14 @@ class XLSXReader extends Optionnable implements ReaderInterface
 {
    protected $dsn;
    protected $handler;
+   protected $keys;
 
    public function __construct($options)
    {
        parent::__construct();
 
         $this->addOption('skip','0');
+        $this->addOption('firstline_as_keys',false);
         $this->addOption('worksheet','');
         $this->addOption('options',array('SharedStringCacheLimit'=>50000));
         $this->getOptionManager()->init($options);
@@ -80,14 +82,28 @@ class XLSXReader extends Optionnable implements ReaderInterface
       }
    }
 
-   public function fetch()
+   public function fetch($raw = false)
    {
+       $options = $this->getOptions();
        $returnValue = false;
        if ($this->handler->valid()) {
             $returnValue = $this->handler->current();
             $this->handler->next();
+            if ($options['firstline_as_keys'] && !$raw) {
+            $nbValue = count($returnValue);
+            $nbKeys =  count($this->keys);
+            if($nbValue < $nbKeys) {
+              for($i = $nbValue; $i < $nbKeys; $i++) {
+                 $returnValue[$i] = "";
+             }
+            } elseif ($nbValue > $nbKeys) {
+              throw new \Exception('Missing column names');
+            }
+           $returnValue =  array_combine($this->keys,$returnValue);
+           }
        }
-
+       
+     
        return $returnValue;;
 
    }
@@ -115,7 +131,12 @@ class XLSXReader extends Optionnable implements ReaderInterface
 
    public function preprocessing()
    {
-       $nbtoSkip = $this->getOption('skip');
+       $options = $this->getOptions();
+ 
+       if ($options['firstline_as_keys']) {
+           $this->keys =   $this->fetch(true);
+       }
+       $nbtoSkip =$options['skip'];
        for ($i = 0; $i< $nbtoSkip;$i++) {
            $this->fetch();
        }
