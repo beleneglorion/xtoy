@@ -25,7 +25,6 @@ class PDOUpdater  extends Optionnable implements WriterInterface
 
         $this->addRequiredOption('table');
         $this->addRequiredOption('where');
-        $this->addRequiredOption('where');
         $this->addOption('username',null);
         $this->addOption('password',null);
         $this->addOption('driver_options',null);
