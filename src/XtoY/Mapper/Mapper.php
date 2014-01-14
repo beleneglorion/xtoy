@@ -15,6 +15,7 @@ class Mapper implements MapperInterface
 
     public function applyRule($line,$ruleConfig)
     {
+        static $counter = 0;
         $returnValue = null;
         if (isset($ruleConfig['src'])) {
             if (is_array($ruleConfig['src'])) {
@@ -45,6 +46,9 @@ class Mapper implements MapperInterface
         }
          if (isset($ruleConfig['value'])) {
             $returnValue =$ruleConfig['value'];
+         }
+         if (isset($ruleConfig['counter'])) {
+            $returnValue =$counter++;;
          }
 
         return $returnValue;
