@@ -34,6 +34,9 @@
         "beleneglorion/spreadsheet-reader" : "dev-master"
 
     },
+    "replace": {
+         "nuovo/spreadsheet-reader" : "dev-master"
+    },
     "autoload": {
         "psr-0": {"XtoY\\": "src/"},
         "classmap": ["vendor/beleneglorion/"]
