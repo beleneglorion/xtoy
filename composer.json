@@ -2,7 +2,7 @@
     "name": "beleneglorion/xtoy",
     "type": "library",
     "description": "A simple mechanism to convert thing X to another thing Y  csv->xml rss->database",
-    "keywords": ["excel", "spreadsheet", "document", "xml", "csv", "tsv", "html", "json", "reader", "converter", "writer"],
+    "keywords": ["excel", "spreadsheet", "document", "xml", "csv", "csv", "html", "json", "reader", "converter", "writer"],
     "homepage": "http://beleneglorion.github.io/xtoy",
     "license": "MIT",
     "authors": [
