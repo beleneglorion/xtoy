@@ -128,5 +128,8 @@ class PDOWriter  extends Optionnable implements WriterInterface
    public function preprocessing()
    {
    }
-
+   
+   public function rollback()
+   {
+   }
 }

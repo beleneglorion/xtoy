@@ -62,6 +62,7 @@ class XtoY
 
     public function run()
     {
+        try {
         if ($this->mode == self::MODE_SEQUENTIAL) {
             $this->reader->open();
             $this->writer->open();
@@ -87,6 +88,12 @@ class XtoY
             $this->writer->postprocessing();
             $this->writer->close();
         }
+        } catch (Exception $e) {
+            // rollback
+            $this->writer->rollback();
+            throw $e;
+        }
+        
     }
 
 }

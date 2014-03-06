@@ -21,4 +21,6 @@ interface WriterInterface
    public function open();
 
    public function close();
+   
+   public function rollback();
 }

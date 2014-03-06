@@ -89,5 +89,9 @@ class SQLWriter  extends Optionnable implements WriterInterface
    {
          return str_replace(array('\\', "\0", "\n", "\r", "'", '"', "\x1a"), array('\\\\', '\\0', '\\n', '\\r', "\\'", '\\"', '\\Z'), $str);
    }
+   
+   public function rollback()
+   {
+   }
 
 }

@@ -7,7 +7,7 @@ use XtoY\Options\Optionnable;
 /**
  * A simple of XliffWriter inspired from symfony XliffFileDumper
  *
- * @author Seéastien Thibault <contact@sebastien-thibault.com>
+ * @author Sébastien Thibault <contact@sebastien-thibault.com>
  * @author Michel Salib <michelsalib@hotmail.com>
  */
 class XliffWriter  extends Optionnable implements WriterInterface
@@ -15,6 +15,8 @@ class XliffWriter  extends Optionnable implements WriterInterface
     protected $ddn;
     protected $document;
     protected $body;
+    protected $backupFile;
+    protected $originalFile;
 
    public function __construct($options)
    {
@@ -22,6 +24,8 @@ class XliffWriter  extends Optionnable implements WriterInterface
 
         $this->addRequiredOption('source-language');
         $this->addRequiredOption('target-language');
+        $this->addOption('overwrite',false);
+        $this->addOption('backup',true);
         $this->addOption('original','');
         $this->getOptionManager()->init($options);
 
@@ -39,13 +43,21 @@ class XliffWriter  extends Optionnable implements WriterInterface
     public function open()
    {
        if (!isset($this->document)) {
+        $options = $this->getOptions();   
         $filename = $this->getDDN();
-        if (file_exists($filename)) {
+        if (file_exists($filename) && !$options['overwrite']) {
             throw new \Exception(sprintf('File exist (%s)',$filename));
-        }
-         if (!is_writable(dirname($filename))) {
+        } 
+        if (!is_writable(dirname($filename))) {
             throw new \Exception(sprintf('Directeory is not writable (%s)',dirname($filename)));
         }
+        if (file_exists($filename) && $options['overwrite']) {
+            if($options['backup']) {
+              $this->backup($filename);
+            } else {
+                @unlink($filename);
+            }
+        } 
         $this->document = new \DOMDocument('1.0', 'utf-8');
 
        }
@@ -100,6 +112,37 @@ class XliffWriter  extends Optionnable implements WriterInterface
         $xliffFile->setAttribute('datatype', 'plaintext');
 
         $this->body = $xliffFile->appendChild($this->document->createElement('body'));
+   }
+   
+   public function  backup($filename) {
+       $options = $this->getOptions();    
+       $filename = realpath($filename);
+       if(!is_boolean($options['backup']) && is_string($options['backup'])) {
+          $backupname = dirname($filename) .DIRECTORY_SEPARATOR.$options['backup'];
+       } else {
+         $backupname = $filename.'.bak';
+       }
+       if(file_exists($backupname)) {
+           unlink($backupname);
+       }
+        if(rename($filename,$backupname)) {
+            $this->backupFile = $backupname;
+            $this->originalFile = $filename;
+        }
+            ;
+      
+   }
+   
+   public function rollback()
+   {
+      if(isset($this->backupFile) && isset( $this->originalFile)) {
+          if(file_exists($this->originalFile)) {
+            @unlink($this->originalFile);
+          }
+          rename($this->backupFile,$this->originalFile);
+          
+      }
+        
    }
 
 }
