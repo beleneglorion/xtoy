@@ -22,6 +22,5 @@
     },
     "autoload": {
         "psr-0": {"XtoY\\": "src/"},
-        "classmap": ["vendor/beleneglorion/"]
     }
 }
