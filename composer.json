@@ -13,29 +13,12 @@
             "role": "Developer"
         }
     ],
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "beleneglorion/spreadsheet-reader",
-                "version": "master",
-                "source": {
-                    "url": "https://github.com/beleneglorion/spreadsheet-reader.git",
-                    "type": "git",
-                    "reference": "master"
-                }
-            }
-        }
-    ],
     "require": {
         "php": ">=5.3.3",
         "php-excel-reader/spreadsheet-reader": "dev-master",
         "symfony/yaml": ">=2.2",
         "beleneglorion/spreadsheet-reader" : "dev-master"
 
-    },
-    "replace": {
-         "nuovo/spreadsheet-reader" : "dev-master"
     },
     "autoload": {
         "psr-0": {"XtoY\\": "src/"},
