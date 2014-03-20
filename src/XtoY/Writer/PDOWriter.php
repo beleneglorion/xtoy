@@ -22,7 +22,7 @@ class PDOWriter  extends Optionnable implements WriterInterface
     protected $line;
     /**
     *
-    * @var ReporterInterface 
+    * @var ReporterInterface
     */
    protected $reporter;
 
@@ -56,7 +56,7 @@ class PDOWriter  extends Optionnable implements WriterInterface
             $options = $this->getOptions();
             $driverOptions = array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION);
             $dsn = $this->getDDN();
-            if(isset($options['driver_options'])) {
+            if (isset($options['driver_options'])) {
                 $driverOptions = $driverOptions+ $options['driver_options'];
             }
             try {
@@ -66,7 +66,7 @@ class PDOWriter  extends Optionnable implements WriterInterface
             }
             if ($options['transaction']) {
                $this->dbh->beginTransaction();
-            }       
+            }
             $this->line = 0;
        }
 
@@ -86,7 +86,7 @@ class PDOWriter  extends Optionnable implements WriterInterface
 
     public function write($line)
     {
-        
+
         $options = $this->getOptions();
         $keys = ''.implode(',',array_map('trim',array_keys($line))).'';
         $marks = implode(',',array_fill(0, count(array_keys($line)), '?'));
@@ -94,19 +94,16 @@ class PDOWriter  extends Optionnable implements WriterInterface
         $sth = $this->dbh->prepare($sql);
         try {
         $sth->execute(array_values($line));
-        } 
-        catch (\PDOException $e)
-        {
-            if(!$options['ignore_duplicate'] || $e->getCode() != 23000) {
+        } catch (\PDOException $e) {
+            if (!$options['ignore_duplicate'] || $e->getCode() != 23000) {
                 throw $e;
             }
 
         }
-        if($this->reporter) {
+        if ($this->reporter) {
             $this->reporter->setWrittenLines(++$this->line);
         }
-        
-        
+
     }
 
     public function writeAll($table)
@@ -139,15 +136,15 @@ class PDOWriter  extends Optionnable implements WriterInterface
    public function preprocessing()
    {
    }
-   
+
    public function rollback()
    {
    }
-   
-       public function setReporter(ReporterInterface $reporter) {
-       
+
+       public function setReporter(ReporterInterface $reporter)
+       {
        $this->reporter = $reporter;
-       
+
        return $this;
    }
 }

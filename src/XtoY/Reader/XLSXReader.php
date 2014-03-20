@@ -14,7 +14,7 @@ class XLSXReader extends Optionnable implements ReaderInterface
    protected $line;
    /**
     *
-    * @var ReporterInterface 
+    * @var ReporterInterface
     */
    protected $reporter;
 
@@ -64,7 +64,7 @@ class XLSXReader extends Optionnable implements ReaderInterface
                 $this->handler->ChangeSheet($sheet);
             }
         }
-        if($this->reporter) {
+        if ($this->reporter) {
             $this->reporter->setTotalLines($this->handler->count());
         }
         $this->line = 0;
@@ -103,8 +103,8 @@ class XLSXReader extends Optionnable implements ReaderInterface
             if ($options['firstline_as_keys'] && !$raw) {
             $nbValue = count($returnValue);
             $nbKeys =  count($this->keys);
-            if($nbValue < $nbKeys) {
-              for($i = $nbValue; $i < $nbKeys; $i++) {
+            if ($nbValue < $nbKeys) {
+              for ($i = $nbValue; $i < $nbKeys; $i++) {
                  $returnValue[$i] = "";
              }
             } elseif ($nbValue > $nbKeys) {
@@ -112,12 +112,11 @@ class XLSXReader extends Optionnable implements ReaderInterface
             }
            $returnValue =  array_combine($this->keys,$returnValue);
            }
-           if($this->reporter) {
+           if ($this->reporter) {
             $this->reporter->setFetchedLines(++$this->line);
         }
        }
-       
-     
+
        return $returnValue;;
 
    }
@@ -146,7 +145,7 @@ class XLSXReader extends Optionnable implements ReaderInterface
    public function preprocessing()
    {
        $options = $this->getOptions();
- 
+
        if ($options['firstline_as_keys']) {
            $this->keys =   $this->fetch(true);
        }
@@ -156,11 +155,11 @@ class XLSXReader extends Optionnable implements ReaderInterface
        }
 
    }
-   
-    public function setReporter(ReporterInterface $reporter) {
-       
+
+    public function setReporter(ReporterInterface $reporter)
+    {
        $this->reporter = $reporter;
-       
+
        return $this;
    }
 

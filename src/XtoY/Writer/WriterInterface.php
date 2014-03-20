@@ -22,8 +22,8 @@ interface WriterInterface
    public function open();
 
    public function close();
-   
+
    public function setReporter(ReporterInterface $reporter);
-   
+
    public function rollback();
 }

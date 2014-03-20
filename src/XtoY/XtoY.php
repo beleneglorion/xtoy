@@ -12,24 +12,24 @@ class XtoY
     const MODE_FULL = 'full';
 
     protected $mode;
-    
+
     /**
      * @var ReaderInterface
      */
-    protected  $reader;
-    
+    protected $reader;
+
     /**
      *
-     * @var MapperInterface 
+     * @var MapperInterface
      */
-    protected  $mapper;
-    
+    protected $mapper;
+
      /**
      *
-     * @var WriterInterface 
+     * @var WriterInterface
      */
-    protected  $writer;
- 
+    protected $writer;
+
     public function __construct()
     {
         $this->setMode(self::MODE_SEQUENTIAL);
@@ -39,33 +39,33 @@ class XtoY
     public function setReader(ReaderInterface $reader)
     {
         $this->reader = $reader;
-        
+
         return $this;
     }
 
     public function setMapper(MapperInterface $mapper)
     {
         $this->mapper = $mapper;
-        
+
         return $this;
     }
 
     public function setWriter(WriterInterface $writer)
     {
         $this->writer = $writer;
-        
+
         return $this;
     }
 
     public function setMode($mode)
     {
         $this->mode = $mode;
-        
+
         return $this;
     }
 
     /**
-     * 
+     *
      * @return ReaderInterface
      */
     public function getReader()
@@ -73,7 +73,7 @@ class XtoY
         return $this->reader;
     }
      /**
-     * 
+     *
      * @return WriterInterface
      */
      public function getWriter()
@@ -81,7 +81,7 @@ class XtoY
         return $this->writer;
     }
      /**
-     * 
+     *
      * @return MapperInterface
      */
      public function getMapper()
@@ -90,7 +90,7 @@ class XtoY
     }
 
      /**
-     * 
+     *
      * @return int
      */
     public function getMode()
@@ -130,7 +130,7 @@ class XtoY
             $this->writer->rollback();
             throw $e;
         }
-        
+
     }
 
 }

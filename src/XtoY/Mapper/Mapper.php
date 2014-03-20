@@ -14,14 +14,12 @@ class Mapper implements MapperInterface
 {
     protected $rules;
     protected $line=0;
-    
+
     /**
      *
-     * @var ReporterInterface 
+     * @var ReporterInterface
      */
     protected $reporter;
-    
-    
 
     public function applyRule($line,$ruleConfig)
     {
@@ -71,9 +69,10 @@ class Mapper implements MapperInterface
         foreach ($rules as $outputField=>$ruleConfig) {
             $returnValue[$outputField] = $this->applyRule($line,$ruleConfig);
         }
-        if($this->reporter) {
+        if ($this->reporter) {
             $this->reporter->setMappedLines(++$this->line);
         }
+
         return $returnValue;
     }
 
@@ -86,7 +85,7 @@ class Mapper implements MapperInterface
             foreach ($rules as $outputField=>$ruleConfig) {
                   $returnValue[$idx][$outputField] = $this->applyRule($line,$ruleConfig);
             }
-            if($this->reporter) {
+            if ($this->reporter) {
             $this->reporter->setMappedLines(++$this->line);
             }
         }
@@ -106,11 +105,11 @@ class Mapper implements MapperInterface
 
         return $this;
     }
-    
-   public function setReporter(ReporterInterface $reporter) {
-       
+
+   public function setReporter(ReporterInterface $reporter)
+   {
        $this->reporter = $reporter;
-       
+
        return $this;
    }
 

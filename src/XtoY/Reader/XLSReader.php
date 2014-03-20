@@ -16,10 +16,9 @@ class XLSReader extends Optionnable implements ReaderInterface
    protected $currentRow;
    /**
     *
-    * @var ReporterInterface 
+    * @var ReporterInterface
     */
    protected $reporter;
-   
 
    public function __construct($options)
    {
@@ -54,9 +53,9 @@ class XLSReader extends Optionnable implements ReaderInterface
         $this->nbRow =   $this->handler->rowcount();
         $this->nbCol =   $this->handler->colcount();
         $this->currentRow = 1;
-        if($this->reporter)  { 
+        if ($this->reporter) {
            $this->reporter->setTotalLines($this->nbRow);
-        } 
+        }
        }
 
    }
@@ -77,13 +76,12 @@ class XLSReader extends Optionnable implements ReaderInterface
            $returnValue[$c-1] = utf8_encode($this->handler->val($this->currentRow,$c));
 
         }
-        if($this->reporter)  { 
+        if ($this->reporter) {
             $this->reporter->setFetchedLines($this->currentRow);
-        } 
+        }
         $this->currentRow++;
 
        }
-      
 
        return $returnValue;;
 
@@ -118,11 +116,11 @@ class XLSReader extends Optionnable implements ReaderInterface
        }
 
    }
-   
-    public function setReporter(ReporterInterface $reporter) {
-       
+
+    public function setReporter(ReporterInterface $reporter)
+    {
        $this->reporter = $reporter;
-       
+
        return $this;
    }
 

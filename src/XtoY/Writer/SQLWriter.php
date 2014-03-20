@@ -17,7 +17,7 @@ class SQLWriter  extends Optionnable implements WriterInterface
     protected $line;
    /**
     *
-    * @var ReporterInterface 
+    * @var ReporterInterface
     */
    protected $reporter;
 
@@ -73,7 +73,7 @@ class SQLWriter  extends Optionnable implements WriterInterface
 
         $sql = sprintf('INSERT INTO %s (%s) VALUES(%s)'."\n",$options['table'],$keys,$values);
         fputs($this->document,$sql);
-        if($this->reporter) {
+        if ($this->reporter) {
             $this->reporter->setWrittenLines(++$this->line);
         }
 
@@ -99,15 +99,15 @@ class SQLWriter  extends Optionnable implements WriterInterface
    {
          return str_replace(array('\\', "\0", "\n", "\r", "'", '"', "\x1a"), array('\\\\', '\\0', '\\n', '\\r', "\\'", '\\"', '\\Z'), $str);
    }
-   
+
    public function rollback()
    {
    }
 
-       public function setReporter(ReporterInterface $reporter) {
-       
+       public function setReporter(ReporterInterface $reporter)
+       {
        $this->reporter = $reporter;
-       
+
        return $this;
    }
 }

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace XtoY\Reporter;
 /**
  * Description of ReporterInterface
@@ -10,10 +9,10 @@ namespace XtoY\Reporter;
 interface ReporterInterface
 {
     public function setFetchedLines();
-    
+
     public function setTotalLines();
-    
+
     public function setMappedLines();
-    
+
     public function setWrittenLines();
 }

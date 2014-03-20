@@ -22,9 +22,9 @@ class PDOUpdater  extends Optionnable implements WriterInterface
     protected $line;
     /**
      *
-     * @var ReporterInterface 
+     * @var ReporterInterface
      */
-    protected $reporter;    
+    protected $reporter;
 
    public function __construct($options)
    {
@@ -56,7 +56,7 @@ class PDOUpdater  extends Optionnable implements WriterInterface
             $options = $this->getOptions();
             $driverOptions = array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION);
             $dsn = $this->getDDN();
-            if(isset($options['driver_options'])) {
+            if (isset($options['driver_options'])) {
                 $driverOptions = $driverOptions+ $options['driver_options'];
             }
             try {
@@ -66,10 +66,10 @@ class PDOUpdater  extends Optionnable implements WriterInterface
             }
             if ($options['transaction']) {
                $this->dbh->beginTransaction();
-            }    
+            }
             $this->line = 0;
        }
-    
+
    }
 
    public function close()
@@ -89,22 +89,22 @@ class PDOUpdater  extends Optionnable implements WriterInterface
 
         $options = $this->getOptions();
         $cond = array();
-        foreach($options['where'] as $f) {
+        foreach ($options['where'] as $f) {
              $cond[] = $f.'='.$this->dbh->quote($line[$f]);
              unset($line[$f]); // if in where doesn't need to be updated
         }
-        
+
         $fields = array();
         foreach ($line as $k => $v) {
              $fields[] = $k.'='.$this->dbh->quote($v);
         }
-        
+
         $sql = sprintf('UPDATE %s SET %s WHERE %s' ."\n",$options['table'],implode(',',$fields),implode(' AND ',$cond));
         $sth = $this->dbh->exec($sql);
-        if($this->reporter) {
+        if ($this->reporter) {
             $this->reporter->setWrittenLines(++$this->line);
         }
-       
+
     }
 
     public function writeAll($table)
@@ -121,15 +121,15 @@ class PDOUpdater  extends Optionnable implements WriterInterface
    public function preprocessing()
    {
    }
-   
+
    public function rollback()
    {
    }
 
-   public function setReporter(ReporterInterface $reporter) {
-       
+   public function setReporter(ReporterInterface $reporter)
+   {
        $this->reporter = $reporter;
-       
+
        return $this;
    }
 }
