@@ -4,11 +4,18 @@ namespace XtoY\Reader;
 
 use XtoY\Reader\ReaderInterface;
 use XtoY\Options\Optionnable;
+use XtoY\Reporter\ReporterInterface;
 
 class CSVReader extends Optionnable implements ReaderInterface
 {
    protected $dsn;
    protected $handler;
+   protected $line;
+   /**
+    *
+    * @var ReporterInterface 
+    */
+   protected $reporter;
 
    public function __construct($options)
    {
@@ -35,6 +42,7 @@ class CSVReader extends Optionnable implements ReaderInterface
 
    public function open()
    {
+       
        if (!isset($this->handler) || !is_resource($this->handler)) {
         $filename = $this->getDSN();
         if (!file_exists($filename)) {
@@ -49,6 +57,10 @@ class CSVReader extends Optionnable implements ReaderInterface
         }
 
        }
+       $this->line = 0;
+       if($this->reporter)  { 
+           $this->reporter->setTotalLines($this->getTotalLines());
+       }   
 
    }
 
@@ -62,7 +74,10 @@ class CSVReader extends Optionnable implements ReaderInterface
    public function fetch()
    {
        $options = $this->getOptionManager()->getOptions();
-
+       if($this->reporter)  { 
+           $this->reporter->setFetchedLines(++$this->line);
+       }
+       
        return fgetcsv($this->handler,$options['length'],$options['delimiter'],$options['enclosure'],$options['escape']);
 
    }
@@ -95,6 +110,26 @@ class CSVReader extends Optionnable implements ReaderInterface
            $this->fetch();
        }
 
+   }
+   
+   protected function getTotalLines() {
+       $options = $this->getOptionManager()->getOptions();
+       $returnValue = 0;
+       rewind($this->handle);
+       do {
+         $data = fgetcsv($this->handler,$options['length'],$options['delimiter'],$options['enclosure'],$options['escape']);
+         $returnValue++;
+       } while(false !== $data);
+       rewind($this->handle);
+              
+       return $returnValue;
+   }
+   
+   public function setReporter(ReporterInterface $reporter) {
+       
+       $this->reporter = $reporter;
+       
+       return $this;
    }
 
 }

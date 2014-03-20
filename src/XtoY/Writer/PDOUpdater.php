@@ -4,6 +4,7 @@ namespace XtoY\Writer;
 
 use XtoY\Writer\WriterInterface;
 use XtoY\Options\Optionnable;
+use XtoY\Reporter\ReporterInterface;
 /**
  * A simple of PDOWriter
  *
@@ -18,6 +19,12 @@ class PDOUpdater  extends Optionnable implements WriterInterface
      * @var PDO
      */
     protected $dbh;
+    protected $line;
+    /**
+     *
+     * @var ReporterInterface 
+     */
+    protected $reporter;    
 
    public function __construct($options)
    {
@@ -59,9 +66,10 @@ class PDOUpdater  extends Optionnable implements WriterInterface
             }
             if ($options['transaction']) {
                $this->dbh->beginTransaction();
-            }       
+            }    
+            $this->line = 0;
        }
-
+    
    }
 
    public function close()
@@ -93,6 +101,9 @@ class PDOUpdater  extends Optionnable implements WriterInterface
         
         $sql = sprintf('UPDATE %s SET %s WHERE %s' ."\n",$options['table'],implode(',',$fields),implode(' AND ',$cond));
         $sth = $this->dbh->exec($sql);
+        if($this->reporter) {
+            $this->reporter->setWrittenLines(++$this->line);
+        }
        
     }
 
@@ -115,4 +126,10 @@ class PDOUpdater  extends Optionnable implements WriterInterface
    {
    }
 
+   public function setReporter(ReporterInterface $reporter) {
+       
+       $this->reporter = $reporter;
+       
+       return $this;
+   }
 }

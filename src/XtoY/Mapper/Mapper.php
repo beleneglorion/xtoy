@@ -3,6 +3,7 @@
 namespace XtoY\Mapper;
 
 use XtoY\Mapper\MapperInterface;
+use XtoY\Reporter\ReporterInterface;
 
 /**
  * Description of Mapper
@@ -12,6 +13,15 @@ use XtoY\Mapper\MapperInterface;
 class Mapper implements MapperInterface
 {
     protected $rules;
+    protected $line=0;
+    
+    /**
+     *
+     * @var ReporterInterface 
+     */
+    protected $reporter;
+    
+    
 
     public function applyRule($line,$ruleConfig)
     {
@@ -61,7 +71,9 @@ class Mapper implements MapperInterface
         foreach ($rules as $outputField=>$ruleConfig) {
             $returnValue[$outputField] = $this->applyRule($line,$ruleConfig);
         }
-
+        if($this->reporter) {
+            $this->reporter->setMappedLines(++$this->line);
+        }
         return $returnValue;
     }
 
@@ -73,6 +85,9 @@ class Mapper implements MapperInterface
             $returnValue[$idx] = array();
             foreach ($rules as $outputField=>$ruleConfig) {
                   $returnValue[$idx][$outputField] = $this->applyRule($line,$ruleConfig);
+            }
+            if($this->reporter) {
+            $this->reporter->setMappedLines(++$this->line);
             }
         }
 
@@ -91,5 +106,12 @@ class Mapper implements MapperInterface
 
         return $this;
     }
+    
+   public function setReporter(ReporterInterface $reporter) {
+       
+       $this->reporter = $reporter;
+       
+       return $this;
+   }
 
 }

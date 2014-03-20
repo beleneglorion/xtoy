@@ -4,12 +4,19 @@ namespace XtoY\Reader;
 
 use XtoY\Reader\ReaderInterface;
 use XtoY\Options\Optionnable;
+use XtoY\Reporter\ReporterInterface;
 
 class XLSXReader extends Optionnable implements ReaderInterface
 {
    protected $dsn;
    protected $handler;
    protected $keys;
+   protected $line;
+   /**
+    *
+    * @var ReporterInterface 
+    */
+   protected $reporter;
 
    public function __construct($options)
    {
@@ -57,6 +64,10 @@ class XLSXReader extends Optionnable implements ReaderInterface
                 $this->handler->ChangeSheet($sheet);
             }
         }
+        if($this->reporter) {
+            $this->reporter->setTotalLines($this->handler->count());
+        }
+        $this->line = 0;
        }
    }
 
@@ -101,6 +112,9 @@ class XLSXReader extends Optionnable implements ReaderInterface
             }
            $returnValue =  array_combine($this->keys,$returnValue);
            }
+           if($this->reporter) {
+            $this->reporter->setFetchedLines(++$this->line);
+        }
        }
        
      
@@ -141,6 +155,13 @@ class XLSXReader extends Optionnable implements ReaderInterface
            $this->fetch();
        }
 
+   }
+   
+    public function setReporter(ReporterInterface $reporter) {
+       
+       $this->reporter = $reporter;
+       
+       return $this;
    }
 
 }

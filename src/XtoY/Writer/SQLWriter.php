@@ -4,6 +4,7 @@ namespace XtoY\Writer;
 
 use XtoY\Writer\WriterInterface;
 use XtoY\Options\Optionnable;
+use XtoY\Reporter\ReporterInterface;
 /**
  * A simple of SQLWriter
  *
@@ -13,6 +14,12 @@ class SQLWriter  extends Optionnable implements WriterInterface
 {
     protected $ddn;
     protected $document;
+    protected $line;
+   /**
+    *
+    * @var ReporterInterface 
+    */
+   protected $reporter;
 
    public function __construct($options)
    {
@@ -43,7 +50,7 @@ class SQLWriter  extends Optionnable implements WriterInterface
             throw new \Exception(sprintf('Directeory is not writable (%s)',dirname($filename)));
         }
         $this->document = fopen($filename,'w');
-
+        $this->line = 0;
        }
 
    }
@@ -66,6 +73,9 @@ class SQLWriter  extends Optionnable implements WriterInterface
 
         $sql = sprintf('INSERT INTO %s (%s) VALUES(%s)'."\n",$options['table'],$keys,$values);
         fputs($this->document,$sql);
+        if($this->reporter) {
+            $this->reporter->setWrittenLines(++$this->line);
+        }
 
     }
 
@@ -94,4 +104,10 @@ class SQLWriter  extends Optionnable implements WriterInterface
    {
    }
 
+       public function setReporter(ReporterInterface $reporter) {
+       
+       $this->reporter = $reporter;
+       
+       return $this;
+   }
 }

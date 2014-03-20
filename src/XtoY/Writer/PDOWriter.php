@@ -4,6 +4,7 @@ namespace XtoY\Writer;
 
 use XtoY\Writer\WriterInterface;
 use XtoY\Options\Optionnable;
+use XtoY\Reporter\ReporterInterface;
 /**
  * A simple of PDOWriter
  *
@@ -18,6 +19,12 @@ class PDOWriter  extends Optionnable implements WriterInterface
      * @var PDO
      */
     protected $dbh;
+    protected $line;
+    /**
+    *
+    * @var ReporterInterface 
+    */
+   protected $reporter;
 
    public function __construct($options)
    {
@@ -60,6 +67,7 @@ class PDOWriter  extends Optionnable implements WriterInterface
             if ($options['transaction']) {
                $this->dbh->beginTransaction();
             }       
+            $this->line = 0;
        }
 
    }
@@ -93,6 +101,9 @@ class PDOWriter  extends Optionnable implements WriterInterface
                 throw $e;
             }
 
+        }
+        if($this->reporter) {
+            $this->reporter->setWrittenLines(++$this->line);
         }
         
         
@@ -131,5 +142,12 @@ class PDOWriter  extends Optionnable implements WriterInterface
    
    public function rollback()
    {
+   }
+   
+       public function setReporter(ReporterInterface $reporter) {
+       
+       $this->reporter = $reporter;
+       
+       return $this;
    }
 }

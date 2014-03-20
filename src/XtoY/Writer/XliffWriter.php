@@ -4,6 +4,7 @@ namespace XtoY\Writer;
 
 use XtoY\Writer\WriterInterface;
 use XtoY\Options\Optionnable;
+use XtoY\Reporter\ReporterInterface;
 /**
  * A simple of XliffWriter inspired from symfony XliffFileDumper
  *
@@ -17,6 +18,12 @@ class XliffWriter  extends Optionnable implements WriterInterface
     protected $body;
     protected $backupFile;
     protected $originalFile;
+   protected $line;
+   /**
+    *
+    * @var ReporterInterface 
+    */
+   protected $reporter;
 
    public function __construct($options)
    {
@@ -59,7 +66,7 @@ class XliffWriter  extends Optionnable implements WriterInterface
             }
         } 
         $this->document = new \DOMDocument('1.0', 'utf-8');
-
+        $this->line = 0;
        }
 
    }
@@ -81,6 +88,9 @@ class XliffWriter  extends Optionnable implements WriterInterface
         $t = $translation->appendChild($this->document->createElement('target'));
         $t->appendChild($this->document->createTextNode($line['target']));
         $this->body->appendChild($translation);
+        if($this->reporter) {
+            $this->reporter->setWrittenLines(++$this->line);
+        }
 
     }
 
@@ -143,6 +153,13 @@ class XliffWriter  extends Optionnable implements WriterInterface
           
       }
         
+   }
+   
+   public function setReporter(ReporterInterface $reporter) {
+       
+       $this->reporter = $reporter;
+       
+       return $this;
    }
 
 }
