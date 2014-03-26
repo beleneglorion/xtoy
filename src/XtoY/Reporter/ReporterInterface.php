@@ -8,11 +8,11 @@ namespace XtoY\Reporter;
  */
 interface ReporterInterface
 {
-    public function setFetchedLines();
+    public function setFetchedLines($fetched);
 
-    public function setTotalLines();
+    public function setTotalLines($total);
 
-    public function setMappedLines();
+    public function setMappedLines($mapped);
 
-    public function setWrittenLines();
+    public function setWrittenLines($written);
 }
