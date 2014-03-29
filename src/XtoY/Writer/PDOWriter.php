@@ -7,7 +7,7 @@ use XtoY\Options\Optionnable;
 /**
  * A simple of PDOWriter
  *
- * @author Seéastien Thibault <contact@sebastien-thibault.com>
+ * @author Sébastien Thibault <contact@sebastien-thibault.com>
  */
 class PDOWriter  extends Optionnable implements WriterInterface
 {

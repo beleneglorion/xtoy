@@ -4,7 +4,7 @@ namespace XtoY\Writer;
 /**
  * Description of WriterInterface
  *
- * @author sebastien
+ * @author Sébastien Thibault <contact@sebastien-thibault.com>
  */
 interface WriterInterface
 {

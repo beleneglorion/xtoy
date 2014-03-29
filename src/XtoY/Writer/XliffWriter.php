@@ -7,7 +7,7 @@ use XtoY\Options\Optionnable;
 /**
  * A simple of XliffWriter inspired from symfony XliffFileDumper
  *
- * @author Seéastien Thibault <contact@sebastien-thibault.com>
+ * @author Sébastien Thibault <contact@sebastien-thibault.com>
  * @author Michel Salib <michelsalib@hotmail.com>
  */
 class XliffWriter  extends Optionnable implements WriterInterface

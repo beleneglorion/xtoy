@@ -5,11 +5,11 @@ namespace XtoY\Writer;
 use XtoY\Writer\WriterInterface;
 use XtoY\Options\Optionnable;
 /**
- * A simple of SQLWriter
+ * A simple of CSVWriter
  *
  * @author Sébastien Thibault <contact@sebastien-thibault.com>
  */
-class SQLWriter  extends Optionnable implements WriterInterface
+class CSVWriter  extends Optionnable implements WriterInterface
 {
     protected $ddn;
     protected $document;
@@ -18,7 +18,9 @@ class SQLWriter  extends Optionnable implements WriterInterface
    {
        parent::__construct();
 
-        $this->addRequiredOption('table');
+        $this->addOption('delimiter',',');
+        $this->addOption('enclosure','"');
+        $this->addOption('escaping',true);
         $this->getOptionManager()->init($options);
 
    }
@@ -57,15 +59,18 @@ class SQLWriter  extends Optionnable implements WriterInterface
 
     public function write($line)
     {
+        //int fputcsv ( resource $handle , array $fields [, string $delimiter = ',' [, string $enclosure = '"' ]] )
         $options = $this->getOptions();
-        $keys = '"'.implode('","',array_map('trim',array_keys($line))).'"';
         // escaping values
-        $values = array_map('XtoY\Writer\SQL_Writer::escaping',array_values($line));
-        //imploding
-        $values = '"'.implode('","',$values).'"';
+        if($options['escaping']) {
+          $values = array_map('XtoY\Writer\SQL_Writer::escaping',array_values($line));
+        } else {
+            $values =array_values($line);
+        }
+        
+        
 
-        $sql = sprintf('INSERT INTO %s (%s) VALUES(%s)'."\n",$options['table'],$keys,$values);
-        fputs($this->document,$sql);
+        fputcsv($this->document,$values,$options['delimiter'],$options['enclosure']);
 
     }
 
@@ -87,7 +92,7 @@ class SQLWriter  extends Optionnable implements WriterInterface
 
    public static function escaping($str)
    {
-         return str_replace(array('\\', "\0", "\n", "\r", "'", '"', "\x1a"), array('\\\\', '\\0', '\\n', '\\r', "\\'", '\\"', '\\Z'), $str);
+         return str_replace(array('"'), array('""'), $str);
    }
 
 }
