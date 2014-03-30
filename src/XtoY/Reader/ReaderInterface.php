@@ -1,7 +1,7 @@
 <?php
 
 namespace XtoY\Reader;
-
+use XtoY\Reporter\ReporterInterface;
 /**
  *
  * @author beleneglorion
@@ -19,6 +19,8 @@ interface ReaderInterface
    public function open();
 
    public function close();
+
+   public function setReporter(ReporterInterface $reporter);
 
    public function preprocessing();
 }

@@ -2,7 +2,7 @@
     "name": "beleneglorion/xtoy",
     "type": "library",
     "description": "A simple mechanism to convert thing X to another thing Y  csv->xml rss->database",
-    "keywords": ["excel", "spreadsheet", "document", "xml", "csv", "tsv", "html", "json", "reader", "converter", "writer"],
+    "keywords": ["excel", "spreadsheet", "document", "xml", "csv", "csv", "html", "json", "reader", "converter", "writer"],
     "homepage": "http://beleneglorion.github.io/xtoy",
     "license": "MIT",
     "authors": [
@@ -11,20 +11,6 @@
             "email": "contact@sebastien-thibault.com",
             "homepage": "http://sebastien-thibault.com",
             "role": "Developer"
-        }
-    ],
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "beleneglorion/spreadsheet-reader",
-                "version": "master",
-                "source": {
-                    "url": "https://github.com/beleneglorion/spreadsheet-reader.git",
-                    "type": "git",
-                    "reference": "master"
-                }
-            }
         }
     ],
     "require": {
@@ -37,7 +23,6 @@
     },
     "autoload": {
         "psr-0": {"XtoY\\": "src/"},
-        "classmap": ["vendor/beleneglorion/"],
         "files": ["lib/PHP_XLSXWriter.php"]
     }
 }

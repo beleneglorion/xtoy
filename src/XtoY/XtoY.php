@@ -11,10 +11,24 @@ class XtoY
     const MODE_SEQUENTIAL = 'sequential';
     const MODE_FULL = 'full';
 
-    protected $mode,
-            $reader,
-            $mapper,
-            $writer;
+    protected $mode;
+
+    /**
+     * @var ReaderInterface
+     */
+    protected $reader;
+
+    /**
+     *
+     * @var MapperInterface
+     */
+    protected $mapper;
+
+     /**
+     *
+     * @var WriterInterface
+     */
+    protected $writer;
 
     public function __construct()
     {
@@ -25,36 +39,60 @@ class XtoY
     public function setReader(ReaderInterface $reader)
     {
         $this->reader = $reader;
+
+        return $this;
     }
 
     public function setMapper(MapperInterface $mapper)
     {
         $this->mapper = $mapper;
+
+        return $this;
     }
 
     public function setWriter(WriterInterface $writer)
     {
         $this->writer = $writer;
+
+        return $this;
     }
 
     public function setMode($mode)
     {
         $this->mode = $mode;
+
+        return $this;
     }
 
+    /**
+     *
+     * @return ReaderInterface
+     */
     public function getReader()
     {
         return $this->reader;
     }
+     /**
+     *
+     * @return WriterInterface
+     */
      public function getWriter()
     {
         return $this->writer;
     }
+     /**
+     *
+     * @return MapperInterface
+     */
      public function getMapper()
     {
         return $this->mapper;
     }
 
+     /**
+     *
+     * @return int
+     */
     public function getMode()
     {
         return $this->mode;
@@ -62,13 +100,13 @@ class XtoY
 
     public function run()
     {
+        try {
         if ($this->mode == self::MODE_SEQUENTIAL) {
             $this->reader->open();
             $this->writer->open();
             $this->reader->preprocessing();
             $this->writer->preprocessing();
             while (false != ($data = $this->reader->fetch())) {
-
                 $data = $this->mapper->convert($data);
                 $this->writer->write($data);
             }
@@ -87,6 +125,12 @@ class XtoY
             $this->writer->postprocessing();
             $this->writer->close();
         }
+        } catch (Exception $e) {
+            // rollback
+            $this->writer->rollback();
+            throw $e;
+        }
+
     }
 
 }

@@ -1,8 +1,9 @@
-TOTO
+
+TODO
 ====
 
 Composer
- add "require-dev package for Doctrine and monolog "
+ add "require-dev package for Doctrine  "
 
 WRITER
   - Doctrine

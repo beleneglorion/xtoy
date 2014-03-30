@@ -5,6 +5,7 @@ namespace XtoY\Reader;
 use XtoY\Reader\ReaderInterface;
 use XtoY\Options\Optionnable;
 use PHPExcelReader\SpreadsheetReader;
+use XtoY\Reporter\ReporterInterface;
 
 class XLSReader extends Optionnable implements ReaderInterface
 {
@@ -13,6 +14,11 @@ class XLSReader extends Optionnable implements ReaderInterface
    protected $nbRow;
    protected $nbCol;
    protected $currentRow;
+   /**
+    *
+    * @var ReporterInterface
+    */
+   protected $reporter;
 
    public function __construct($options)
    {
@@ -47,7 +53,9 @@ class XLSReader extends Optionnable implements ReaderInterface
         $this->nbRow =   $this->handler->rowcount();
         $this->nbCol =   $this->handler->colcount();
         $this->currentRow = 1;
-       // $this->handler->dump();
+        if ($this->reporter) {
+           $this->reporter->setTotalLines($this->nbRow);
+        }
        }
 
    }
@@ -68,7 +76,9 @@ class XLSReader extends Optionnable implements ReaderInterface
            $returnValue[$c-1] = utf8_encode($this->handler->val($this->currentRow,$c));
 
         }
-
+        if ($this->reporter) {
+            $this->reporter->setFetchedLines($this->currentRow);
+        }
         $this->currentRow++;
 
        }
@@ -105,6 +115,13 @@ class XLSReader extends Optionnable implements ReaderInterface
            $this->fetch();
        }
 
+   }
+
+    public function setReporter(ReporterInterface $reporter)
+    {
+       $this->reporter = $reporter;
+
+       return $this;
    }
 
 }

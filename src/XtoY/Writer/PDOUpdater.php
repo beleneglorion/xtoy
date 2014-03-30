@@ -8,9 +8,9 @@ use XtoY\Reporter\ReporterInterface;
 /**
  * A simple of PDOWriter
  *
- * @author Sébastien Thibault <contact@sebastien-thibault.com>
+ * @author Seéastien Thibault <contact@sebastien-thibault.com>
  */
-class PDOWriter  extends Optionnable implements WriterInterface
+class PDOUpdater  extends Optionnable implements WriterInterface
 {
     protected $ddn;
     /**
@@ -21,21 +21,21 @@ class PDOWriter  extends Optionnable implements WriterInterface
     protected $dbh;
     protected $line;
     /**
-    *
-    * @var ReporterInterface
-    */
-   protected $reporter;
+     *
+     * @var ReporterInterface
+     */
+    protected $reporter;
 
    public function __construct($options)
    {
        parent::__construct();
 
         $this->addRequiredOption('table');
+        $this->addRequiredOption('where');
         $this->addOption('username',null);
         $this->addOption('password',null);
         $this->addOption('driver_options',null);
         $this->addOption('transaction',false);
-        $this->addOption('ignore_duplicate',false);
         $this->getOptionManager()->init($options);
 
    }
@@ -88,18 +88,19 @@ class PDOWriter  extends Optionnable implements WriterInterface
     {
 
         $options = $this->getOptions();
-        $keys = ''.implode(',',array_map('trim',array_keys($line))).'';
-        $marks = implode(',',array_fill(0, count(array_keys($line)), '?'));
-        $sql = sprintf('INSERT INTO %s (%s) VALUES(%s)'."\n",$options['table'],$keys,$marks);
-        $sth = $this->dbh->prepare($sql);
-        try {
-        $sth->execute(array_values($line));
-        } catch (\PDOException $e) {
-            if (!$options['ignore_duplicate'] || $e->getCode() != 23000) {
-                throw $e;
-            }
-
+        $cond = array();
+        foreach ($options['where'] as $f) {
+             $cond[] = $f.'='.$this->dbh->quote($line[$f]);
+             unset($line[$f]); // if in where doesn't need to be updated
         }
+
+        $fields = array();
+        foreach ($line as $k => $v) {
+             $fields[] = $k.'='.$this->dbh->quote($v);
+        }
+
+        $sql = sprintf('UPDATE %s SET %s WHERE %s' ."\n",$options['table'],implode(',',$fields),implode(' AND ',$cond));
+        $sth = $this->dbh->exec($sql);
         if ($this->reporter) {
             $this->reporter->setWrittenLines(++$this->line);
         }
@@ -108,25 +109,9 @@ class PDOWriter  extends Optionnable implements WriterInterface
 
     public function writeAll($table)
     {
-        $options = $this->getOptions();
-        $firstLine = current($table);
-        $keys = '"'.implode('","',array_map('trim',array_keys($firstLine))).'"';
-        $marks = implode(',',array_fill(0, count(array_keys($firstLine)), '?'));
-        try {
-             /* Insérer plusieurs enregistrements sur une base tout-ou-rien */
-             $sql = sprintf('INSERT INTO %s (%s) VALUES(%s)'."\n",$options['table'],$keys,$marks);
-
-            $sth = $this->dbh->prepare($sql);
-            foreach ($table  as $line) {
-               $sth->execute(array_values($line));
-            }
-        } catch (\PDOException $e) {
-            if ($options['transaction']) {
-              $this->dbh->rollback();
-            }
-            throw new \Exception($e->getMessage());
+        foreach ($table  as $line) {
+           $this>-write($line);
         }
-
     }
 
     public function postprocessing()
@@ -141,8 +126,8 @@ class PDOWriter  extends Optionnable implements WriterInterface
    {
    }
 
-       public function setReporter(ReporterInterface $reporter)
-       {
+   public function setReporter(ReporterInterface $reporter)
+   {
        $this->reporter = $reporter;
 
        return $this;

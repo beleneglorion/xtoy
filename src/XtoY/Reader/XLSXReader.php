@@ -4,17 +4,26 @@ namespace XtoY\Reader;
 
 use XtoY\Reader\ReaderInterface;
 use XtoY\Options\Optionnable;
+use XtoY\Reporter\ReporterInterface;
 
 class XLSXReader extends Optionnable implements ReaderInterface
 {
    protected $dsn;
    protected $handler;
+   protected $keys;
+   protected $line;
+   /**
+    *
+    * @var ReporterInterface
+    */
+   protected $reporter;
 
    public function __construct($options)
    {
        parent::__construct();
 
         $this->addOption('skip','0');
+        $this->addOption('firstline_as_keys',false);
         $this->addOption('worksheet','');
         $this->addOption('options',array('SharedStringCacheLimit'=>50000));
         $this->getOptionManager()->init($options);
@@ -55,6 +64,10 @@ class XLSXReader extends Optionnable implements ReaderInterface
                 $this->handler->ChangeSheet($sheet);
             }
         }
+        if ($this->reporter) {
+            $this->reporter->setTotalLines($this->handler->count());
+        }
+        $this->line = 0;
        }
    }
 
@@ -80,12 +93,28 @@ class XLSXReader extends Optionnable implements ReaderInterface
       }
    }
 
-   public function fetch()
+   public function fetch($raw = false)
    {
+       $options = $this->getOptions();
        $returnValue = false;
        if ($this->handler->valid()) {
             $returnValue = $this->handler->current();
             $this->handler->next();
+            if ($options['firstline_as_keys'] && !$raw) {
+            $nbValue = count($returnValue);
+            $nbKeys =  count($this->keys);
+            if ($nbValue < $nbKeys) {
+              for ($i = $nbValue; $i < $nbKeys; $i++) {
+                 $returnValue[$i] = "";
+             }
+            } elseif ($nbValue > $nbKeys) {
+              throw new \Exception('Missing column names');
+            }
+           $returnValue =  array_combine($this->keys,$returnValue);
+           }
+           if ($this->reporter) {
+            $this->reporter->setFetchedLines(++$this->line);
+        }
        }
 
        return $returnValue;;
@@ -115,11 +144,23 @@ class XLSXReader extends Optionnable implements ReaderInterface
 
    public function preprocessing()
    {
-       $nbtoSkip = $this->getOption('skip');
+       $options = $this->getOptions();
+
+       if ($options['firstline_as_keys']) {
+           $this->keys =   $this->fetch(true);
+       }
+       $nbtoSkip =$options['skip'];
        for ($i = 0; $i< $nbtoSkip;$i++) {
            $this->fetch();
        }
 
+   }
+
+    public function setReporter(ReporterInterface $reporter)
+    {
+       $this->reporter = $reporter;
+
+       return $this;
    }
 
 }
