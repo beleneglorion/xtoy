@@ -40,7 +40,7 @@ class Mapper implements MapperInterface
             if (isset($ruleConfig['exclude']) && is_array($ruleConfig['exclude']) && is_array($data)) {
                foreach ($ruleConfig['exclude'] as $field) {
                    unset($data[$field]);
-        }
+              }
             }
 
             if (isset($ruleConfig['callback'])) {
