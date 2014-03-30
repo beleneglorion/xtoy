@@ -4,7 +4,7 @@ namespace XtoY\Reader;
 
 use XtoY\Reader\ReaderInterface;
 use XtoY\Options\Optionnable;
-
+use XtoY\Reporter\ReporterInterface;
 /**
  * A simple of PDOReader
  *
