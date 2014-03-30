@@ -10,8 +10,8 @@ use XtoY\Options\Optionnable;
  *
  * @author Sébastien Thibault <contact@sebastien-thibault.com>
  */
-class PDOReader extends Optionnable implements ReaderInterface {
-
+class PDOReader extends Optionnable implements ReaderInterface
+{
     protected $dsn;
 
     /**
@@ -24,11 +24,12 @@ class PDOReader extends Optionnable implements ReaderInterface {
     /**
      *  Query Statement
      *
-     * @var PDOStatement 
+     * @var PDOStatement
      */
     protected $stmt;
 
-    public function __construct($options) {
+    public function __construct($options)
+    {
         parent::__construct();
 
         $this->addRequiredOption('query');
@@ -38,21 +39,24 @@ class PDOReader extends Optionnable implements ReaderInterface {
     }
 
     /**
-     * 
-     * @param string $dsn
+     *
+     * @param  string                 $dsn
      * @return \XtoY\Reader\PDOReader
      */
-    public function setDSN($dsn) {
+    public function setDSN($dsn)
+    {
         $this->dsn = $dsn;
 
         return $this;
     }
 
-    public function getDSN() {
+    public function getDSN()
+    {
         return $this->dsn;
     }
 
-    public function open() {
+    public function open()
+    {
         if (!isset($this->dbh)) {
 
             $options = $this->getOptions();
@@ -67,28 +71,40 @@ class PDOReader extends Optionnable implements ReaderInterface {
                 $info= $this->dbh->errorInfo();
                 throw new \PDOException($info[2], $info[1]);
             }
+
+       if ($this->reporter) {
+           $this->reporter->setTotalLines( $this->stmt->rowCount());
+       }
+
         }
     }
 
-    public function close() {
-
+    public function close()
+    {
         if (isset($this->dbh)) {
             unset($this->dbh);
         }
     }
 
-    public function fetch() {
-        
+    public function fetch()
+    {
         return $this->stmt->fetch(\PDO::FETCH_ASSOC);
     }
 
-    public function fetchAll() {
-        
+    public function fetchAll()
+    {
         return $this->stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
-    public function preprocessing() {
-        
+    public function preprocessing()
+    {
     }
+
+    public function setReporter(ReporterInterface $reporter)
+   {
+       $this->reporter = $reporter;
+
+       return $this;
+   }
 
 }
