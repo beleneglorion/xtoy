@@ -56,7 +56,7 @@ class Mapper implements MapperInterface
             $returnValue =$ruleConfig['value'];
          }
          if (isset($ruleConfig['counter'])) {
-            $returnValue =$counter++;;
+            $returnValue =$counter++;
          }
 
         return $returnValue;
