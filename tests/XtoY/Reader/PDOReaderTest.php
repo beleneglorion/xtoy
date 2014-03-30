@@ -6,7 +6,7 @@ class PDOReaderTest extends PHPUnit_Framework_TestCase
 {
     
     /**
-     * @var XtoY
+     * @var PDOReader
      */
     protected $object;
 

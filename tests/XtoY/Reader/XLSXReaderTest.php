@@ -6,7 +6,7 @@ class XLSXReaderTest extends PHPUnit_Framework_TestCase
 {
     
     /**
-     * @var XtoY
+     * @var XLSXReader
      */
     protected $object;
 
