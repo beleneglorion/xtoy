@@ -63,6 +63,10 @@ class PDOReader extends Optionnable implements ReaderInterface {
                 throw new \Exception(sprintf('Can\'t connect to database %s (%s)', $dsn, $e->getMessage()));
             }
             $this->stmt = $this->dbh->query($options['query']);
+            if (!$this->stmt) {
+                $info= $this->dbh->errorInfo();
+                throw new \PDOException($info[2], $info[1]);
+            }
         }
     }
 
