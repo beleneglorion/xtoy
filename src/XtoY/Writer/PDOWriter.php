@@ -141,7 +141,7 @@ class PDOWriter  extends Optionnable implements WriterInterface
    {
    }
 
-       public function setReporter(ReporterInterface $reporter)
+   public function setReporter(ReporterInterface $reporter)
        {
        $this->reporter = $reporter;
 

@@ -11,7 +11,6 @@ use XtoY\Options\Optionnable;
  */
 class XLSXWriter  extends Optionnable implements WriterInterface
 {
-    protected $ddn;
     protected $data;
 
    public function __construct($options)
@@ -22,28 +21,12 @@ class XLSXWriter  extends Optionnable implements WriterInterface
         $this->getOptionManager()->init($options);
 
    }
-    public function setDDN($ddn)
-    {
-       $this->ddn = $ddn;
-    }
 
-    public function getDDN()
-    {
-      return $this->ddn;
-    }
-
-    public function open()
+   public function open()
    {
        if (!isset($this->document)) {
-        $filename = $this->getDDN();
-        if (file_exists($filename)) {
-            throw new \Exception(sprintf('File exist (%s)',$filename));
-        }
-         if (!is_writable(dirname($filename))) {
-            throw new \Exception(sprintf('Directeory is not writable (%s)',dirname($filename)));
-        }
-        $this->document =  new \XLSXWriter();
-
+        parent::open();
+          $this->document =  new \XLSXWriter();
        }
 
    }
@@ -52,19 +35,24 @@ class XLSXWriter  extends Optionnable implements WriterInterface
    {
       if (isset($this->document)) {
           $this->document->writeToFile($this->getDDN());
-         
+
       }
    }
 
     public function write($line)
     {
         $this->data[] = $line;
-
+        if ($this->reporter) {
+            $this->reporter->setWrittenLines(++$this->line);
+        }
     }
 
     public function writeAll($table)
     {
         $this->data = $table;
+       if ($this->reporter) {
+            $this->reporter->setWrittenLines(count(array_keys($this->data)));
+        }
     }
 
     public function postprocessing()
@@ -72,12 +60,7 @@ class XLSXWriter  extends Optionnable implements WriterInterface
         $options = $this->getOptions();
         $this->document->writeSheet($this->data,$options['worksheet']);
         unset($this->data);
-       
+
     }
-
-   public function preprocessing()
-   {
-   }
-
 
 }

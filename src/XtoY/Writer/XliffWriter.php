@@ -13,12 +13,8 @@ use XtoY\Reporter\ReporterInterface;
  */
 class XliffWriter  extends Optionnable implements WriterInterface
 {
-    protected $ddn;
     protected $document;
     protected $body;
-    protected $backupFile;
-    protected $originalFile;
-   protected $line;
    /**
     *
     * @var ReporterInterface
@@ -32,41 +28,15 @@ class XliffWriter  extends Optionnable implements WriterInterface
         $this->addRequiredOption('source-language');
         $this->addRequiredOption('target-language');
         $this->addOption('overwrite',false);
-        $this->addOption('backup',true);
-        $this->addOption('original','');
         $this->getOptionManager()->init($options);
 
    }
-    public function setDDN($ddn)
-    {
-       $this->ddn = $ddn;
-    }
-
-    public function getDDN()
-    {
-      return $this->ddn;
-    }
 
     public function open()
    {
        if (!isset($this->document)) {
-        $options = $this->getOptions();
-        $filename = $this->getDDN();
-        if (file_exists($filename) && !$options['overwrite']) {
-            throw new \Exception(sprintf('File exist (%s)',$filename));
-        }
-        if (!is_writable(dirname($filename))) {
-            throw new \Exception(sprintf('Directeory is not writable (%s)',dirname($filename)));
-        }
-        if (file_exists($filename) && $options['overwrite']) {
-            if ($options['backup']) {
-              $this->backup($filename);
-            } else {
-                @unlink($filename);
-            }
-        }
-        $this->document = new \DOMDocument('1.0', 'utf-8');
-        $this->line = 0;
+        parent::open();
+         $this->document = new \DOMDocument('1.0', 'utf-8');
        }
 
    }
@@ -101,10 +71,6 @@ class XliffWriter  extends Optionnable implements WriterInterface
         }
     }
 
-      public function postprocessing()
-      {
-      }
-
    public function preprocessing()
    {
         $this->document->formatOutput = true;
@@ -122,45 +88,6 @@ class XliffWriter  extends Optionnable implements WriterInterface
         $xliffFile->setAttribute('datatype', 'plaintext');
 
         $this->body = $xliffFile->appendChild($this->document->createElement('body'));
-   }
-
-   public function backup($filename)
-   {
-       $options = $this->getOptions();
-       $filename = realpath($filename);
-       if (!is_boolean($options['backup']) && is_string($options['backup'])) {
-          $backupname = dirname($filename) .DIRECTORY_SEPARATOR.$options['backup'];
-       } else {
-         $backupname = $filename.'.bak';
-       }
-       if (file_exists($backupname)) {
-           unlink($backupname);
-       }
-        if (rename($filename,$backupname)) {
-            $this->backupFile = $backupname;
-            $this->originalFile = $filename;
-        }
-            ;
-
-   }
-
-   public function rollback()
-   {
-      if (isset($this->backupFile) && isset( $this->originalFile)) {
-          if (file_exists($this->originalFile)) {
-            @unlink($this->originalFile);
-          }
-          rename($this->backupFile,$this->originalFile);
-
-      }
-
-   }
-
-   public function setReporter(ReporterInterface $reporter)
-   {
-       $this->reporter = $reporter;
-
-       return $this;
    }
 
 }
