@@ -21,8 +21,12 @@
         "beleneglorion/spreadsheet-reader" : "dev-master"
 
     },
+     "require-dev": {
+        "phpunit/phpunit": "4.0.*"
+    },
     "autoload": {
         "psr-0": {"XtoY\\": "src/"},
         "files": ["lib/PHP_XLSXWriter.php"]
     }
 }
+
