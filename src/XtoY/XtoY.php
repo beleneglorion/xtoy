@@ -33,7 +33,6 @@ class XtoY
     public function __construct()
     {
         $this->setMode(self::MODE_SEQUENTIAL);
-        ;
     }
 
     public function setReader(ReaderInterface $reader)
