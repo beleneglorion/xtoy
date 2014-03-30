@@ -29,6 +29,7 @@
     ],
     "require": {
         "php": ">=5.3.3",
+        "ext-zip": "*",
         "php-excel-reader/spreadsheet-reader": "dev-master",
         "symfony/yaml": ">=2.2",
         "beleneglorion/spreadsheet-reader" : "dev-master"
@@ -36,6 +37,7 @@
     },
     "autoload": {
         "psr-0": {"XtoY\\": "src/"},
-        "classmap": ["vendor/beleneglorion/"]
+        "classmap": ["vendor/beleneglorion/"],
+        "files": ["lib/PHP_XLSXWriter.php"]
     }
 }
