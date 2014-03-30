@@ -2,21 +2,18 @@
 
 namespace XtoY\Writer;
 
-use XtoY\Writer\WriterInterface;
-use XtoY\Options\Optionnable;
 /**
  * A simple of CSVWriter
  *
  * @author Sébastien Thibault <contact@sebastien-thibault.com>
  */
-class CSVWriter  extends Optionnable implements WriterInterface
+class CSVWriter  extends FileWriter
 {
-    protected $ddn;
-    protected $document;
+   protected $document;
 
    public function __construct($options)
    {
-       parent::__construct();
+        parent::__construct();
 
         $this->addOption('delimiter',',');
         $this->addOption('enclosure','"');
@@ -24,28 +21,13 @@ class CSVWriter  extends Optionnable implements WriterInterface
         $this->getOptionManager()->init($options);
 
    }
-    public function setDDN($ddn)
-    {
-       $this->ddn = $ddn;
-    }
-
-    public function getDDN()
-    {
-      return $this->ddn;
-    }
 
     public function open()
    {
        if (!isset($this->document)) {
+        parent::open();
         $filename = $this->getDDN();
-        if (file_exists($filename)) {
-            throw new \Exception(sprintf('File exist (%s)',$filename));
-        }
-         if (!is_writable(dirname($filename))) {
-            throw new \Exception(sprintf('Directeory is not writable (%s)',dirname($filename)));
-        }
         $this->document = fopen($filename,'w');
-
        }
 
    }
@@ -62,15 +44,16 @@ class CSVWriter  extends Optionnable implements WriterInterface
         //int fputcsv ( resource $handle , array $fields [, string $delimiter = ',' [, string $enclosure = '"' ]] )
         $options = $this->getOptions();
         // escaping values
-        if($options['escaping']) {
+        if ($options['escaping']) {
           $values = array_map('XtoY\Writer\SQL_Writer::escaping',array_values($line));
         } else {
             $values =array_values($line);
         }
-        
-        
 
         fputcsv($this->document,$values,$options['delimiter'],$options['enclosure']);
+        if ($this->reporter) {
+            $this->reporter->setWrittenLines(++$this->line);
+        }
 
     }
 
@@ -81,14 +64,6 @@ class CSVWriter  extends Optionnable implements WriterInterface
         }
 
     }
-
-    public function postprocessing()
-    {
-    }
-
-   public function preprocessing()
-   {
-   }
 
    public static function escaping($str)
    {
