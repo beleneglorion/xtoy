@@ -2,14 +2,12 @@
 
 namespace XtoY\Writer;
 
-use XtoY\Writer\WriterInterface;
-use XtoY\Options\Optionnable;
 /**
  * A simple of XLSXWriter
  *
  * @author Sébastien Thibault <contact@sebastien-thibault.com>
  */
-class XLSXWriter  extends Optionnable implements WriterInterface
+class XLSXWriter  extends FileWriter
 {
     protected $data;
 
@@ -58,9 +56,20 @@ class XLSXWriter  extends Optionnable implements WriterInterface
     public function postprocessing()
     {
         $options = $this->getOptions();
-        $this->document->writeSheet($this->data,$options['worksheet']);
+        $header_types = $this->getHeadersType();
+        $this->document->writeSheet($this->data,$options['worksheet'],$header_types);
         unset($this->data);
 
+    }
+    
+    private  function getHeadersType() {
+        
+        $header_types = array();
+        $first = current($this->data);
+        foreach($first as $k=>$v) {
+            $header_types[$k] = 'string';
+        }
+        return $header_types;
     }
 
 }

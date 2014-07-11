@@ -116,7 +116,7 @@ Class XLSXWriter
 		$max_cell = self::xlsCell( $row_count-1, $column_count-1 );
 
 		$tabselected = count($this->sheets_meta)==1 ? 'true' : 'false';//only first sheet is selected
-		$cell_formats_arr = empty($header_types) ? array_fill(0, $column_count, 'string') : array_values($header_types);
+		$cell_formats_arr = empty($header_types) ? array_fill(0, $column_count, 'string') : $header_types;
 		$header_row = empty($header_types) ? array() : array_keys($header_types);
 
 		$fd = fopen($sheet_filename, "w+");
@@ -149,9 +149,10 @@ Class XLSXWriter
 		foreach($data as $i=>$row)
 		{
 			fwrite($fd, '<row collapsed="false" customFormat="false" customHeight="false" hidden="false" ht="12.1" outlineLevel="0" r="'.($i+$header_offset+1).'">');
+            $c = 0;
 			foreach($row as $k=>$v)
 			{
-				$this->writeCell($fd, $i+$header_offset, $k, $v, $cell_formats_arr[$k]);
+				$this->writeCell($fd, $i+$header_offset, $c++, $v, $cell_formats_arr[$k]);
 			}
 			fwrite($fd, '</row>');
 		}
