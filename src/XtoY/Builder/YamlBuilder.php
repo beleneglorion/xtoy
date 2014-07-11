@@ -12,6 +12,9 @@ class YamlBuilder extends Builder
 {
    public static function getConverter($configFile)
    {
+       if(!file_exists($configFile)) {
+           throw new \Exception('File not found :'.$configFile);
+       }
        $config = Yaml::parse($configFile);
 
        return self::build($config);
