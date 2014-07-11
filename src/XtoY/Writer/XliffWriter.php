@@ -11,7 +11,7 @@ use XtoY\Reporter\ReporterInterface;
  * @author Sébastien Thibault <contact@sebastien-thibault.com>
  * @author Michel Salib <michelsalib@hotmail.com>
  */
-class XliffWriter  extends Optionnable implements WriterInterface
+class XliffWriter  extends FileWriter
 {
     protected $document;
     protected $body;
