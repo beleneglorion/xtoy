@@ -45,7 +45,7 @@ class CSVWriter  extends FileWriter
         $options = $this->getOptions();
         // escaping values
         if ($options['escaping']) {
-          $values = array_map('XtoY\Writer\SQL_Writer::escaping',array_values($line));
+          $values = array_map('XtoY\Writer\SQLWriter::escaping',array_values($line));
         } else {
             $values =array_values($line);
         }

@@ -67,7 +67,7 @@ class SQLWriter  extends Optionnable implements WriterInterface
         $options = $this->getOptions();
         $keys = '"'.implode('","',array_map('trim',array_keys($line))).'"';
         // escaping values
-        $values = array_map('XtoY\Writer\SQL_Writer::escaping',array_values($line));
+        $values = array_map('XtoY\Writer\SQLWriter::escaping',array_values($line));
         //imploding
         $values = '"'.implode('","',$values).'"';
 

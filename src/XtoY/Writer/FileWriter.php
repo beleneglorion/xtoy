@@ -4,6 +4,7 @@ namespace XtoY\Writer;
 
 use XtoY\Writer\WriterInterface;
 use XtoY\Options\Optionnable;
+use XtoY\Reporter\ReporterInterface;
 /**
  * Abstract Class that manage backup/restore file when writting file
  *
@@ -15,6 +16,7 @@ abstract class FileWriter  extends Optionnable implements WriterInterface
     protected $backupFile;
     protected $originalFile;
     protected $line;
+    protected $reporter;
 
    public function __construct()
    {
@@ -91,7 +93,7 @@ abstract class FileWriter  extends Optionnable implements WriterInterface
    {
        $options = $this->getOptions();
        $filename = realpath($filename);
-       if (!is_boolean($options['backup']) && is_string($options['backup'])) {
+       if (!is_bool($options['backup']) && is_string($options['backup'])) {
           $backupname = dirname($filename) .DIRECTORY_SEPARATOR.$options['backup'];
        } else {
          $backupname = $filename.'.bak';
