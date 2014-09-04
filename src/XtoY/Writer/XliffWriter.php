@@ -34,19 +34,17 @@ class XliffWriter  extends FileWriter
    }
 
     public function open()
-   {
-       if (!isset($this->document)) {
-        parent::open();
-         $this->document = new \DOMDocument('1.0', 'utf-8');
-       }
-
-   }
+    {
+        if (!isset($this->document)) {
+            parent::open();
+            $this->document = new \DOMDocument('1.0', 'utf-8');
+        }
+    }
 
    public function close()
    {
-      if (isset($this->document)) {
-         $this->document->save($this->getDDN());
-      }
+        if (isset($this->document))
+            $this->document->save($this->getDDN());
    }
 
     public function write($line)
@@ -62,7 +60,6 @@ class XliffWriter  extends FileWriter
         if ($this->reporter) {
             $this->reporter->setWrittenLines(++$this->line);
         }
-
     }
 
     public function writeAll($table)
@@ -89,6 +86,24 @@ class XliffWriter  extends FileWriter
         $xliffFile->setAttribute('datatype', 'plaintext');
 
         $this->body = $xliffFile->appendChild($this->document->createElement('body'));
-   }
+    }
+   
+    public function setDDN($ddn)
+    {
+       $this->ddn = $ddn;
+    }
 
+    public function rollback()
+    {
+    }
+
+    public function postprocessing()
+    {
+    }
+
+    public function setReporter(ReporterInterface $reporter)
+    {
+       $this->reporter = $reporter;
+       return $this;
+    }
 }
