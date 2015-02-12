@@ -2,8 +2,6 @@
 
 namespace XtoY\Writer;
 
-use XtoY\Writer\WriterInterface;
-use XtoY\Options\Optionnable;
 use XtoY\Reporter\ReporterInterface;
 /**
  * A simple of XliffWriter inspired from symfony XliffFileDumper
@@ -11,7 +9,7 @@ use XtoY\Reporter\ReporterInterface;
  * @author Sébastien Thibault <contact@sebastien-thibault.com>
  * @author Michel Salib <michelsalib@hotmail.com>
  */
-class XliffWriter  extends Optionnable implements WriterInterface
+class XliffWriter  extends FileWriter
 {
     protected $document;
     protected $body;

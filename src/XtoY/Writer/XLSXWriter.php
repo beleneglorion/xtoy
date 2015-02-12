@@ -2,14 +2,12 @@
 
 namespace XtoY\Writer;
 
-use XtoY\Writer\WriterInterface;
-use XtoY\Options\Optionnable;
 /**
  * A simple of XLSXWriter
  *
  * @author Sébastien Thibault <contact@sebastien-thibault.com>
  */
-class XLSXWriter  extends Optionnable implements WriterInterface
+class XLSXWriter  extends FileWriter
 {
     protected $data;
 
