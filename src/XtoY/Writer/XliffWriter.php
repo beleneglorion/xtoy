@@ -26,6 +26,7 @@ class XliffWriter  extends FileWriter
         $this->addRequiredOption('source-language');
         $this->addRequiredOption('target-language');
         $this->addOption('overwrite',false);
+        $this->addOption('original','');
         $this->getOptionManager()->init($options);
 
    }

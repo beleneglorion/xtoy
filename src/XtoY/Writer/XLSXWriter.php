@@ -56,9 +56,20 @@ class XLSXWriter  extends FileWriter
     public function postprocessing()
     {
         $options = $this->getOptions();
-        $this->document->writeSheet($this->data,$options['worksheet']);
+        $header_types = $this->getHeadersType();
+        $this->document->writeSheet($this->data,$options['worksheet'],$header_types);
         unset($this->data);
 
+    }
+    
+    private  function getHeadersType() {
+        
+        $header_types = array();
+        $first = current($this->data);
+        foreach($first as $k=>$v) {
+            $header_types[$k] = 'string';
+        }
+        return $header_types;
     }
 
 }
