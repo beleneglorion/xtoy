@@ -17,7 +17,7 @@ abstract class Optionnable
 
     public function __construct()
     {
-        $this->optionsManager = new OptionsManager();
+        
 
     }
     /**
@@ -25,8 +25,11 @@ abstract class Optionnable
      *
      * @return OptionsManager
      */
-    public function getOptionManager()
+    public function getOptionManager()            
     {
+        if(!isset($this->optionsManager)) {
+            $this->optionsManager = new OptionsManager();
+        }
         return $this->optionsManager;
     }
 
