@@ -18,15 +18,15 @@
         "ext-zip": "*",
         "php-excel-reader/spreadsheet-reader": "dev-master",
         "symfony/yaml": ">=2.2",
-        "beleneglorion/spreadsheet-reader" : "dev-master"
+        "beleneglorion/spreadsheet-reader" : "dev-master",
+        "mk-j/php_xlsxwriter": "dev-master"
 
     },
      "require-dev": {
         "phpunit/phpunit": "4.0.*"
     },
     "autoload": {
-        "psr-0": {"XtoY\\": "src/"},
-        "files": ["lib/PHP_XLSXWriter.php"]
+        "psr-0": {"XtoY\\": "src/"}
     }
 }
 
